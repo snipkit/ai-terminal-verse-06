@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
 
 @tailwind base;
@@ -7,13 +6,13 @@
 
 @layer base {
   :root {
-    --background: 232 27% 12%;
+    --background: 232 27% 0%;
     --foreground: 210 40% 98%;
 
-    --card: 232 27% 14%;
+    --card: 232 27% 5%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 232 27% 14%;
+    --popover: 232 27% 5%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 252 100% 69%;
@@ -51,4 +50,3 @@
     font-family: 'Fira Code', monospace;
   }
 }
-
