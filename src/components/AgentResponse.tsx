@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Bot, Play, CheckCircle, AlertCircle } from 'lucide-react';
+import { Bot, Play, CheckCircle, AlertCircle, Zap } from 'lucide-react';
 
 interface AgentStep {
   id: string;
