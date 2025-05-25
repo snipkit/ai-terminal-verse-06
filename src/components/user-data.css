@@ -1,0 +1,44 @@
+
+.user-data-form-spacer {
+  margin: 16px 0;
+}
+
+.user-data-form-select {
+  width: 100%;
+  padding: 12px;
+  margin: 16px 0;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background: #1f2937;
+  color: white;
+  font-size: 14px;
+}
+
+.user-data-form-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.modal-container-input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background: #1f2937;
+  color: white;
+  font-size: 14px;
+}
+
+.modal-container-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.text-white {
+  color: white;
+}
