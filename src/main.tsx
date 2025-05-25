@@ -22,8 +22,8 @@ declare global {
   }
 }
 
-if (process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID) {
-  ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID);
+if (import.meta.env.VITE_GOOGLE_ANALYTICS_TRACKING_ID) {
+  ReactGA.initialize(import.meta.env.VITE_GOOGLE_ANALYTICS_TRACKING_ID);
   ReactGA.send('pageview');
 }
 
@@ -68,7 +68,7 @@ function dsnFromFeature({ getEvent }: MatchParam) {
   if (isWasmEvent(event)) {
     return [
       {
-        dsn: process.env.REACT_APP_WASM_SENTRY_DSN!,
+        dsn: import.meta.env.VITE_WASM_SENTRY_DSN!,
         release: `warp_wasm@${window.warp_app_version}`,
       },
     ];
@@ -122,7 +122,7 @@ function getWasmSentryEnvironment() {
 }
 
 Sentry.init({
-  dsn: process.env.REACT_APP_SENTRY_DSN,
+  dsn: import.meta.env.VITE_SENTRY_DSN,
   integrations: [wasmIntegration()],
   transport: makeMultiplexedTransport(makeFetchTransport, dsnFromFeature),
   tunnel: '/proxy/sentry',

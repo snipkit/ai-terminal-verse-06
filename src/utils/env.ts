@@ -1,8 +1,8 @@
 
 export function isProd(): boolean {
-  return process.env.NODE_ENV === 'production';
+  return import.meta.env.MODE === 'production';
 }
 
 export function isStaging(): boolean {
-  return process.env.NODE_ENV === 'staging';
+  return import.meta.env.MODE === 'staging';
 }
