@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Terminal as TerminalIcon } from 'lucide-react';
+import { Terminal as TerminalIcon, Zap, Settings, Plus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
@@ -54,44 +54,73 @@ export const Terminal = () => {
     }, 1000);
   };
 
+  const clearMessages = () => {
+    setMessages([]);
+  };
+
   return (
-    <Card className="w-full max-w-4xl mx-auto mt-8 bg-card border-border">
-      <div className="p-4 border-b border-border flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <TerminalIcon className="w-5 h-5 text-primary" />
-          <h1 className="text-lg font-semibold">AI Terminal</h1>
-        </div>
-        <div className="flex items-center gap-2">
-          <Select value={selectedModel} onValueChange={setSelectedModel}>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Select Model" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="gpt-4o">GPT-4 Optimized</SelectItem>
-              <SelectItem value="gpt-4o-mini">GPT-4 Mini</SelectItem>
-              <SelectItem value="llama-3">Llama 3</SelectItem>
-            </SelectContent>
-          </Select>
-          <Button variant="outline" size="sm">Clear</Button>
+    <div className="w-full max-w-6xl mx-auto mt-4">
+      {/* Warp-style header */}
+      <div className="bg-zinc-900 rounded-t-xl border border-zinc-800 border-b-0">
+        <div className="flex items-center justify-between px-4 py-3">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div className="flex items-center gap-2 ml-4">
+              <Zap className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-zinc-200">AI Terminal</span>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <Select value={selectedModel} onValueChange={setSelectedModel}>
+              <SelectTrigger className="w-[140px] h-8 text-xs bg-zinc-800 border-zinc-700">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="gpt-4o">GPT-4o</SelectItem>
+                <SelectItem value="gpt-4o-mini">GPT-4o Mini</SelectItem>
+                <SelectItem value="claude-3">Claude 3</SelectItem>
+                <SelectItem value="llama-3">Llama 3</SelectItem>
+              </SelectContent>
+            </Select>
+            <Button variant="ghost" size="sm" onClick={clearMessages} className="h-8 px-2 text-xs">
+              Clear
+            </Button>
+            <Button variant="ghost" size="sm" className="h-8 px-2">
+              <Settings className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
       </div>
       
-      <ScrollArea className="h-[500px] p-4" ref={scrollRef}>
-        <div className="space-y-4">
-          {messages.map((message, index) => (
-            message.type === 'input' ? (
-              <TerminalInput key={index} command={message.content} timestamp={message.timestamp} />
-            ) : (
-              <TerminalResponse key={index} response={message.content} model={message.model} timestamp={message.timestamp} />
-            )
-          ))}
+      {/* Terminal content */}
+      <div className="bg-black border border-zinc-800 border-t-0 rounded-b-xl">
+        <ScrollArea className="h-[600px] p-6" ref={scrollRef}>
+          <div className="space-y-4">
+            {messages.length === 0 && (
+              <div className="text-zinc-500 text-sm font-mono">
+                Welcome to AI Terminal. Type a command to get started.
+              </div>
+            )}
+            {messages.map((message, index) => (
+              message.type === 'input' ? (
+                <TerminalInput key={index} command={message.content} timestamp={message.timestamp} />
+              ) : (
+                <TerminalResponse key={index} response={message.content} model={message.model} timestamp={message.timestamp} />
+              )
+            ))}
+          </div>
+        </ScrollArea>
+        
+        {/* Input area */}
+        <div className="border-t border-zinc-800 p-4">
+          <TerminalInput onSubmit={handleCommand} />
         </div>
-      </ScrollArea>
-      
-      <div className="p-4 border-t border-border">
-        <TerminalInput onSubmit={handleCommand} />
       </div>
-    </Card>
+    </div>
   );
 };
-

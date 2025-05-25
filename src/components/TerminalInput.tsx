@@ -1,6 +1,7 @@
 
 import React, { useState, KeyboardEvent } from 'react';
 import { Input } from '@/components/ui/input';
+import { ChevronRight } from 'lucide-react';
 
 interface TerminalInputProps {
   onSubmit?: (command: string) => void;
@@ -24,12 +25,14 @@ export const TerminalInput: React.FC<TerminalInputProps> = ({
 
   if (command) {
     return (
-      <div className="flex items-start gap-2">
-        <span className="text-primary font-mono">$</span>
+      <div className="flex items-start gap-3">
+        <div className="flex items-center gap-2 mt-0.5">
+          <ChevronRight className="w-4 h-4 text-primary" />
+        </div>
         <div className="flex-1">
-          <p className="font-mono text-foreground">{command}</p>
+          <p className="font-mono text-zinc-100 text-sm leading-relaxed">{command}</p>
           {timestamp && (
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-xs text-zinc-500 mt-1 font-mono">
               {timestamp.toLocaleTimeString()}
             </p>
           )}
@@ -39,16 +42,16 @@ export const TerminalInput: React.FC<TerminalInputProps> = ({
   }
 
   return (
-    <div className="flex items-center gap-2">
-      <span className="text-primary font-mono">$</span>
+    <div className="flex items-center gap-3">
+      <ChevronRight className="w-4 h-4 text-primary flex-shrink-0" />
       <Input
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="font-mono bg-background border-border"
-        placeholder="Enter a command..."
+        className="font-mono bg-transparent border-none text-zinc-100 text-sm placeholder:text-zinc-500 focus-visible:ring-0 focus-visible:ring-offset-0 px-0"
+        placeholder="Enter your AI prompt..."
+        autoFocus
       />
     </div>
   );
 };
-
