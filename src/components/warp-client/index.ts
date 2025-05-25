@@ -1,6 +1,7 @@
 
 export enum WarpEventKind {
   OpenOnNative = 'OpenOnNative',
+  ErrorLogged = 'ErrorLogged',
 }
 
 export interface OpenOnNativeEvent {
@@ -8,7 +9,12 @@ export interface OpenOnNativeEvent {
   url: string;
 }
 
-export type WarpEvent = OpenOnNativeEvent;
+export interface ErrorLoggedEvent {
+  kind: WarpEventKind.ErrorLogged;
+  error: string;
+}
+
+export type WarpEvent = OpenOnNativeEvent | ErrorLoggedEvent;
 
 class WarpEventBus {
   private listeners: Array<(event: WarpEvent) => void> = [];
