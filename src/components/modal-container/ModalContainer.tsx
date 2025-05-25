@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Alert, Warning } from 'lucide-react';
+import { AlertCircle, AlertTriangle } from 'lucide-react';
 
 export enum ModalContainerIconType {
   Logo = 'logo',
@@ -17,9 +17,9 @@ const ModalContainer: React.FC<ModalContainerProps> = ({ iconType, children }) =
   const getIcon = () => {
     switch (iconType) {
       case ModalContainerIconType.Alert:
-        return <Alert className="w-8 h-8 text-red-500" />;
+        return <AlertCircle className="w-8 h-8 text-red-500" />;
       case ModalContainerIconType.Warning:
-        return <Warning className="w-8 h-8 text-yellow-500" />;
+        return <AlertTriangle className="w-8 h-8 text-yellow-500" />;
       case ModalContainerIconType.Logo:
       default:
         return <div className="w-8 h-8 bg-blue-500 rounded" />;
