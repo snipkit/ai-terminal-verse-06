@@ -42,6 +42,7 @@
     "@radix-ui/react-tooltip": "^1.1.4",
     "@sentry/core": "^9.22.0",
     "@sentry/react": "^9.22.0",
+    "@sentry/types": "^9.22.0",
     "@sentry/wasm": "^9.22.0",
     "@tanstack/react-query": "^5.56.2",
     "class-variance-authority": "^0.7.1",
