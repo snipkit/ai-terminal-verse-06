@@ -1,0 +1,3985 @@
+.background {
+    background: #000;
+    min-height:100vh
+}
+
+.background-inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height:100vh
+}
+
+.top-left-logo {
+    height: 25px;
+    width:106.75px
+}
+
+.flex {
+    display:flex
+}
+
+.action-button {
+    background: #006da8;
+    border: 1px solid hsla(0, 0%, 100%, .2);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Akkurat;
+    font-size: 14px;
+    height: 45px;
+    width: 157px;
+    &:hover {
+        background-color:#01a4ff
+    }
+}
+
+.authed-user-image {
+    border-radius: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit:cover
+}
+
+.authed-user-image--inline {
+    height: 32px;
+    width:32px
+}
+
+.link-text-button {
+    background: none;
+    border: none;
+    color: #9d9d9d;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration:underline
+}
+
+#signup-email-input {
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    height: 30px;
+    margin-top: 12px;
+    padding:8px 10px
+}
+
+#signup-email-input:focus {
+    outline:none
+}
+
+#signup-email-form {
+    align-self: stretch;
+    display: flex;
+    flex-direction:column
+}
+
+.profile-circle {
+    background: #000;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    font: 22px Arial, sans-serif;
+    height: 25px;
+    padding: 10px;
+    text-align: center;
+    width:25px
+}
+
+.authenticated-header {
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    padding: 30px;
+    position: absolute;
+    right:0
+}
+
+.user-profile-expanded {
+    align-items: center;
+    border: 1px solid #9d9d9d;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: Akkurat;
+    font-size: 12px;
+    justify-content: center;
+    min-width: 175px;
+    padding: 15px;
+    position: absolute;
+    right:30px
+}
+
+.user-profile-expanded-item {
+    font-size: 14px;
+    padding-bottom:5px
+}
+
+.modal-container {
+    background: hsla(0, 0%, 85%, .04);
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-radius: 10px;
+    font-family: Roboto, sans-serif;
+    margin: 48px 0;
+    position: relative;
+    width:400px
+}
+
+.modal-container-background {
+    height: 100%;
+    position: absolute;
+    width:100%
+}
+
+.modal-container-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+    position:relative
+}
+
+.modal-container-icon-container {
+    background: linear-gradient(0deg, hsla(0, 0%, 100%, .15), hsla(0, 0%, 100%, .15)), #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+    height: 64px;
+    width:64px
+}
+
+.modal-container-icon-container-image {
+    height: 32px;
+    padding-left: 16px;
+    padding-top: 16px;
+    width:32px
+}
+
+.modal-container-icon-container-image--logo {
+    height: 56px;
+    padding-left: 4px;
+    padding-top: 4px;
+    width:56px
+}
+
+.modal-container-body {
+    color: hsla(0, 0%, 100%, .6);
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    gap: 32px;
+    height: 100%;
+    line-height:16px
+}
+
+.modal-container-header {
+    color: hsla(0, 0%, 100%, .9);
+    font-family: Roboto;
+    font-size: 20px;
+    height: auto;
+    line-height:23px
+}
+
+#loading-screen-background {
+    background: #000;
+    height: 100vh;
+    position: absolute;
+    width:100vw
+}
+
+@font-face {
+    font-family: Akkurat Mono;
+    font-weight: 400;
+    src: local("Akkurat Mono"), url(/static/media/AkkuratMonoLLWeb-Regular.woff2)
+}
+
+.download-background {
+    background: #121212;
+    display: flex;
+    justify-content: center;
+    min-height:100vh
+}
+
+.download-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin:32px
+}
+
+.download-blurb-and-button {
+    display: flex;
+    flex-basis: 400px;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    min-width:400px
+}
+
+.download-rive {
+    aspect-ratio: 16/9;
+    width:720px
+}
+
+.download-rive canvas {
+    background: #000;
+    border-radius: 8px;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    width:100%
+}
+
+.download-rive-loaded canvas {
+    opacity:1
+}
+
+.center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:center
+}
+
+.download-warp-logo {
+    margin-left: -30px;
+    width:180px
+}
+
+#download-button {
+    margin-bottom:18px
+}
+
+.download-blurb-and-button h1 {
+    color: #fff;
+    font-family: Matter, sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    margin:10px 0
+}
+
+.login-subtitle-text {
+    color:#fff
+}
+
+.download-blurb-and-button p {
+    color: hsla(0, 0%, 100%, .6);
+    line-height: 1.3;
+    margin-bottom:20px
+}
+
+.download-blurb-and-button a {
+    color: hsla(0, 0%, 100%, .8);
+    text-decoration:underline
+}
+
+.download-invite-container p {
+    margin-bottom:10px
+}
+
+.download-divider {
+    border: none;
+    border-top: 1px solid hsla(0, 0%, 100%, .2);
+    margin:2rem 0
+}
+
+.download-canary {
+    color: hsla(0, 0%, 100%, .6);
+    display: flex;
+    gap: 1rem;
+    line-height:1.3
+}
+
+.download-cta-button {
+    align-items: center;
+    background: #478ae5;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    height: 60px;
+    justify-content: center;
+    margin: 15px 0;
+    width:250px
+}
+
+.download-cta-button:hover {
+    background:#3c7ed5
+}
+
+.download-cta-button:active {
+    background:#7baae6
+}
+
+.download-copy-invite-code {
+    align-items: center;
+    display: flex;
+    width:250px
+}
+
+.download-copy-invite-code-text {
+    align-items: center;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 8px 0 0 8px;
+    color: #fff;
+    display: flex;
+    font-size: 24px;
+    font-weight: 700;
+    height: 60px;
+    height: 80px;
+    padding: 0 15px;
+    width:250px
+}
+
+.download-copy-invite-code-button {
+    background: none;
+    background: rgba(0, 0, 0, .2);
+    border: none;
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: light;
+    height: 80px;
+    padding:0 15px
+}
+
+.download-copy-invite-code-button:hover {
+    background:hsla(0, 0%, 100%, .1)
+}
+
+.subtext-paragraph-box {
+    width:300px
+}
+
+@media screen and (max-width: 815px) {
+    .download-blurb-and-button .warp-logo-with-text {
+        display:none
+    }
+
+    .download-blurb-and-button h1 {
+        margin-top:40px
+    }
+}
+
+.dl-dropdown {
+    display: inline-block;
+    position:relative
+}
+
+.dl-dropdown .dl-button-container {
+    align-items: stretch;
+    display: inline-flex;
+    flex-direction: row;
+    width:100%
+}
+
+.dl-button {
+    align-items: center;
+    background: radial-gradient(84.3% 100% at 50% 93.48%, rgba(19, 162, 83, .8) 0, rgba(16, 224, 111, .8) .01%, rgba(16, 224, 111, .01) 99.99%, rgba(19, 162, 83, 0) 100%), linear-gradient(97deg, hsla(0, 0%, 7%, .6) -1%, rgba(69, 69, 69, .6));
+    border: 1px solid #516e5c;
+    border-radius: 6px 0 0 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding:4px
+}
+
+.dl-button-icon-container {
+    background: radial-gradient(1075.73% 141.42% at 0 0, hsla(0, 0%, 100%, .1) 0, hsla(0, 0%, 100%, 0) 100%), rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    height: 16px;
+    padding: 8px;
+    width:16px
+}
+
+.dl-button-action-text {
+    flex-grow:1
+}
+
+.padding-left-16 {
+    padding-left:16px
+}
+
+.padding-right-16 {
+    padding-right:16px
+}
+
+.dl-dropdown .download-item {
+    border-radius: 4px;
+    margin: 4px;
+    padding:8px
+}
+
+.dl-dropdown .download-item-package {
+    align-items: center;
+    display: flex;
+    justify-content:space-between
+}
+
+.dl-dropdown-menu {
+    background: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, .05)), radial-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, 0)), linear-gradient(rgba(0, 0, 0, .975), rgba(0, 0, 0, .975));
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index:1
+}
+
+.border-grey-1px, .dl-dropdown-menu {
+    border:1px solid #383838
+}
+
+.dl-dropdown .download-item:hover {
+    background: radial-gradient(100% 1071.07% at 0 0, hsla(0, 0%, 100%, .1) 0, hsla(0, 0%, 100%, 0) 100%), hsla(0, 0%, 100%, .1);
+    color:#fff
+}
+
+.dl-dropdown .download-item:hover .hidden {
+    visibility:visible
+}
+
+.dl-dropdown svg.dl-icon {
+    display:block
+}
+
+.dl-dropdown .download-item:hover .dl-icon path {
+    fill:#fff
+}
+
+.dl-dropdown .download-item-button-wrapper {
+    align-items: center;
+    display:flex
+}
+
+.dl-dropdown .download-item-package-name {
+    align-items: flex-end;
+    display: flex;
+    flex-direction:column
+}
+
+.dl-dropdown .download-item-button-wrapper svg {
+    height: 18px;
+    width:18px
+}
+
+.dl-dropdown .download-item-windows {
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin:4px
+}
+
+.hidden {
+    visibility:hidden
+}
+
+.border-radius-left-6 {
+    border-radius:6px 0 0 6px
+}
+
+.border-radius-all-6 {
+    border-radius:6px
+}
+
+.dl-dropdown-button {
+    background: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, .05)), radial-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, 0)), linear-gradient(rgba(0, 0, 0, .975), rgba(0, 0, 0, .975));
+    border: 1px solid #383838;
+    border-radius: 0 6px 6px 0;
+    margin-left:8px
+}
+
+.dl-dropdown .download-item-button {
+    background: none;
+    border: none;
+    padding:0
+}
+
+.dl-dropdown-button:hover .dl-dropdown-icon path {
+    fill:#fff
+}
+
+.dl-dropdown .button-row {
+    display: flex;
+    flex-direction: row;
+    flex-grow:1
+}
+
+@font-face {
+    font-family: Akkurat-Light;
+    font-weight: 400;
+    src: local("Akkurat-Light"), url(/static/media/AkkuratLLWeb-Light.woff2)
+}
+
+#canary-page {
+    background: #121212;
+    min-height:100vh
+}
+
+#canary-page .contents {
+    color: #fff;
+    font-family: Matter, sans-serif;
+    gap: 5rem;
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 12rem 2rem 0;
+    text-align:center
+}
+
+#canary-page .canary-header, #canary-page .contents {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:center
+}
+
+#canary-page .canary-header {
+    gap:2rem
+}
+
+#canary-page .canary-header-headlines {
+    display: flex;
+    flex-direction: column;
+    gap:.5rem
+}
+
+#canary-page .canary-header-headlines h1 {
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 130%;
+    margin:0
+}
+
+#canary-page .canary-header-headlines h3 {
+    color: hsla(0, 0%, 100%, .6);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 130%;
+    margin:0
+}
+
+#canary-page .canary-header-cta {
+    align-items: center;
+    background: #478ae5;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    height: 60px;
+    justify-content: center;
+    text-decoration: none;
+    width:250px
+}
+
+#canary-page .canary-screenshot {
+    max-width:100%
+}
+
+@media screen and (max-width: 991px) {
+    #canary-page {
+        padding-top:2rem
+    }
+
+    #canary-page .canary-header-headlines h1 {
+        font-size:2.5rem
+    }
+
+    #canary-page .canary-header-headlines h3 {
+        font-size:1.25rem
+    }
+}
+
+.not-working-container {
+    font-size: 12px;
+    height: 0;
+    margin-top: 14px;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 1s, opacity 1.5s ease-in-out;
+    transition-delay:.2s
+}
+
+.not-working-container.visible {
+    height: 32px;
+    opacity:1
+}
+
+.modal-container-button-inline {
+    background: none;
+    border: none;
+    color: #faf9f6;
+    font-size: inherit;
+    padding: 0;
+    text-decoration: none;
+    width: fit-content;
+    &:visited {
+        color:#faf9f6
+    }
+
+    &:hover {
+        color:#01a4ff
+    }
+}
+
+.modal-container-button-full-width {
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid hsla(0, 0%, 100%, .25);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #faf9f6;
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    gap: 8px;
+    height: 40px;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    &:visited {
+        color:#fff
+    }
+
+    &:hover {
+        background-color:rgba(31, 31, 31, .75)
+    }
+}
+
+.modal-container-button--primary {
+    background-color: #faf9f6;
+    border: none;
+    color: #000;
+    font-size: 1em;
+    font-weight: 400;
+    &:hover {
+        background-color:hsla(0, 0%, 100%, .6)
+    }
+}
+
+.modal-container-button--secondary {
+    background-color: #1b1e1f;
+    border: 1px solid hsla(0, 0%, 100%, .15);
+    color: #faf9f6;
+    font-size: 1em;
+    font-weight: 400;
+    &:hover {
+        background-color: rgba(64, 64, 64, .5);
+        color:#faf9f6
+    }
+}
+
+.modal-container-button--destructive {
+    background-color: #bc362a;
+    border: none;
+    &:hover {
+        background-color:#d44b3f
+    }
+}
+
+.modal-container-button--disabled {
+    &:hover {
+        background-color: transparent;
+        cursor:not-allowed
+    }
+}
+
+.modal-container-button--toggleable {
+    background-color: linear-gradient(0deg, hsla(0, 0%, 100%, .15), hsla(0, 0%, 100%, .15)), #000;
+    border: none;
+    font-size: 1em;
+    font-weight: 400;
+    &:hover {
+        background-color:#1b1e1f
+    }
+}
+
+.team-discovery-box {
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-radius: 10px;
+    padding:16px
+}
+
+.team-discovery-header {
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 16px;
+    line-height:23px
+}
+
+.team-discovery-body, .team-discovery-header {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight:400
+}
+
+.team-discovery-body {
+    color: hsla(0, 0%, 100%, .6);
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom:10px
+}
+
+.authed-user-container {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    height: 32px;
+    justify-content: flex-start;
+    padding-top:8px
+}
+
+.authed-username-header {
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height:23px
+}
+
+.inviter-heading-user-image {
+    border-radius: 50%;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, .3));
+    margin-right: 8px;
+    max-height: 16px;
+    max-width:16px
+}
+
+.auth-error {
+    color:#bc362a
+}
+
+.auth-error-button {
+    background: transparent;
+    border: none;
+    color: #bc362a;
+    font-size: inherit;
+    padding: 0;
+    text-decoration: underline;
+    width:auto
+}
+
+.auth-form {
+    gap:16px
+}
+
+.auth-form, .auth-form-email-form {
+    display: flex;
+    flex-direction:column
+}
+
+.auth-form-email-form {
+    gap:inherit
+}
+
+.auth-form-divider {
+    align-items: center;
+    display:flex
+}
+
+.auth-form-divider-line {
+    background-color: hsla(0, 0%, 100%, .25);
+    flex-grow: 5;
+    height:1px
+}
+
+.auth-form-divider-or {
+    flex-grow: 2;
+    text-align:center
+}
+
+.modal-container-input {
+    background: #000;
+    border: 1px solid hsla(0, 0%, 100%, .25);
+    border-radius: 4px;
+    color: #fff;
+    padding:10px 16px
+}
+
+.email-resent {
+    color:hsla(0, 0%, 100%, 0)
+}
+
+.email-resent--visible {
+    color: hsla(0, 0%, 100%, .6);
+    transition: height 1s, color .5s ease-in-out;
+    transition-delay:0s
+}
+
+.auth-view-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top:-12px
+}
+
+.auth-view-skip-login {
+    font-size:12px
+}
+
+.user-data-form-select {
+    background-color: transparent;
+    border: 1px solid hsla(0, 0%, 100%, .25);
+    color: #fff;
+    font-size: 14px;
+    height: 40px;
+    padding:0 16px
+}
+
+.user-data-form-spacer {
+    background-color: hsla(0, 0%, 100%, .25);
+    height:1px
+}
+
+#wasm-container {
+    height: 100vh;
+    position: absolute;
+    width: 100vw;
+    z-index:100
+}
+
+#wasm-container canvas {
+    display: block;
+    height: 100%;
+    outline: none;
+    width:100%
+}
+
+canvas {
+    display: block;
+    height: 100vh;
+    outline: none;
+    width:100vw
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format("woff2");
+    unicode-range:u + 0460-052f, u + 1c80-1c88, u + 20b4, u + 2de0-2dff, u + a640-a69f, u + fe2e-fe2f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format("woff2");
+    unicode-range:u + 0400-045f, u + 0490-0491, u + 04b0-04b1, u + 2116
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format("woff2");
+    unicode-range:u + 1f??
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format("woff2");
+    unicode-range:u + 0370-03ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format("woff2");
+    unicode-range:u + 0102-0103, u + 0110-0111, u + 0128-0129, u + 0168-0169, u + 01a0-01a1, u + 01af-01b0, u + 1ea0-1ef9, u + 20ab
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format("woff2");
+    unicode-range:u + 0100-024f, u + 0259, u + 1e??, u + 2020, u + 20a0-20ab, u + 20ad-20cf, u + 2113, u + 2c60-2c7f, u + a720-a7ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format("woff2");
+    unicode-range:u + 00??, u + 0131, u + 0152-0153, u + 02bb-02bc, u + 02c6, u + 02da, u + 02dc, u + 2000-206f, u + 2074, u + 20ac, u + 2122, u + 2191, u + 2193, u + 2212, u + 2215, u + feff, u + fffd
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format("woff2");
+    unicode-range:u + 0460-052f, u + 1c80-1c88, u + 20b4, u + 2de0-2dff, u + a640-a69f, u + fe2e-fe2f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format("woff2");
+    unicode-range:u + 0400-045f, u + 0490-0491, u + 04b0-04b1, u + 2116
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format("woff2");
+    unicode-range:u + 1f??
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format("woff2");
+    unicode-range:u + 0370-03ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format("woff2");
+    unicode-range:u + 0102-0103, u + 0110-0111, u + 0128-0129, u + 0168-0169, u + 01a0-01a1, u + 01af-01b0, u + 1ea0-1ef9, u + 20ab
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format("woff2");
+    unicode-range:u + 0100-024f, u + 0259, u + 1e??, u + 2020, u + 20a0-20ab, u + 20ad-20cf, u + 2113, u + 2c60-2c7f, u + a720-a7ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format("woff2");
+    unicode-range:u + 00??, u + 0131, u + 0152-0153, u + 02bb-02bc, u + 02c6, u + 02da, u + 02dc, u + 2000-206f, u + 2074, u + 20ac, u + 2122, u + 2191, u + 2193, u + 2212, u + 2215, u + feff, u + fffd
+}
+
+@font-face {
+    font-family: Akkurat;
+    font-weight: 500;
+    src: local("Akkurat-Bold"), url(/static/media/AkkuratLLWeb-Bold.woff2)
+}
+
+@font-face {
+    font-family: Akkurat;
+    font-weight: 400;
+    src: local("Akkurat"), url(/static/media/AkkuratLLWeb-Regular.woff2)
+}
+
+@font-face {
+    font-family: Matter;
+    font-weight: 400;
+    src: local("Matter"), url(/static/media/Matter-Regular.woff2)
+}
+
+body {
+    background: #181818;
+    margin:0
+}
+
+button {
+    cursor: pointer;
+    font-family:inherit
+}
+
+.font-main {
+    font-family: Roboto, sans-serif;
+    font-size:14px
+}
+
+.font-akkurat {
+    font-family:Akkurat, sans-serif
+}
+
+.font-akkurat-mono {
+    font-family:Akkurat Mono, sans-serif
+}
+
+.text-white {
+    color:#fff
+}
+
+.text-center {
+    text-align:center
+}
+
+.text-xl {
+    font-size: 1.875rem;
+    line-height:2.25rem
+}
+
+.text-large {
+    font-size:20px
+}
+
+.text-16 {
+    font-size:16px
+}
+
+.text-14 {
+    font-size:14px
+}
+
+.text-12 {
+    font-size:12px
+}
+
+.padding-12 {
+    padding:12px
+}
+
+.text-align-center {
+    text-align:center
+}
+
+.justify-center {
+    justify-content:center
+}
+
+.align-items-center {
+    align-items:center
+}
+
+.margin-left-8 {
+    margin-left:8px
+}
+
+.margin-left-12 {
+    margin-left:12px
+}
+
+.font-weight-600 {
+    font-weight:600
+}
+
+.font-weight-500 {
+    font-weight:500
+}
+
+.fill-white path {
+    fill:#fff
+}
+
+.fill-grey-80 path {
+    fill:hsla(0, 0%, 100%, .8)
+}
+
+.fill-grey-50 path {
+    fill:hsla(0, 0%, 100%, .5)
+}
+
+.text-grey {
+    color:hsla(0, 0%, 100%, .8)
+}
+
+.text-grey-50 {
+    color:hsla(0, 0%, 100%, .5)
+}
+
+.padding-4 {
+    padding:4px
+}
+
+* {
+    scrollbar-color: hsla(215, 8%, 47%, .5) #000;
+    scrollbar-width:auto
+}
+
+::-webkit-scrollbar {
+    width:15px
+}
+
+::-webkit-scrollbar-track {
+    background:#000
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsla(215, 8%, 47%, .5);
+    border: 3px solid #000;
+    border-radius:20px
+}
+
+::-webkit-scrollbar-corner {
+    background:#000
+}
+
+#log {
+    font-family: monaco, Courier New, Courier, monospace;
+    font-size: 12px;
+    line-height: 1.3;
+    margin: 0;
+    padding:10px
+}
+
+#log, pre div {
+    background-color:#000
+}
+
+[class^=log-module_logFooter] {
+    display:none
+}
+
+.App {
+    background:#181818
+}
+
+.top-banner {
+    background-color: #000;
+    height:60px
+}
+
+.top-banner, .top-banner-share-view {
+    display: flex;
+    justify-content:space-between
+}
+
+.top-banner-share-view {
+    align-items: center;
+    height: 80px;
+    max-width: 1200px;
+    min-width:700px
+}
+
+.banner-get-warp-button {
+    align-items: center;
+    display: flex;
+    flex-direction:row
+}
+
+.share-view-wrapper {
+    margin-bottom: 14px;
+    max-width: 1200px;
+    min-width:700px
+}
+
+.embed-view-wrapper {
+    width:100vw
+}
+
+.banner-get-warp-button p {
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size:14px
+}
+
+.banner-warp-button {
+    background-image: linear-gradient(to top right, #339efe, #45eec2);
+    border: 0;
+    border-radius: 100px;
+    color: #fff;
+    font-size:12px
+}
+
+.banner-warp-button, .banner-warp-download-button {
+    background-color: #339efe;
+    cursor: pointer;
+    font-family: Roboto, sans-serif;
+    margin: 14px;
+    padding:10px 30px
+}
+
+.banner-warp-download-button {
+    align-items: center;
+    background-image: linear-gradient(90deg, #339efe, #45eec2);
+    border: 0;
+    border-radius: 4px;
+    color: #000;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: space-around;
+    width:150px
+}
+
+.banner-warp-logo {
+    align-self: center;
+    height:50px
+}
+
+.block-container {
+    max-height: 700px;
+    overflow: auto;
+    overflow-y: auto;
+    padding:20px
+}
+
+.block {
+    background-color: #000;
+    box-shadow: 0 5px 6px #121212;
+    color: #fff;
+    width:100%
+}
+
+.block-buttons {
+    display: flex;
+    height: 55px;
+    justify-content:center
+}
+
+.block-button {
+    align-items: center;
+    background: #000;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: Roboto, sans-serif;
+    font-size: 13px;
+    justify-content: flex-start;
+    margin: 6px;
+    padding: 10px;
+    width:166px
+}
+
+.block-button:hover {
+    background: linear-gradient(#000, #000) padding-box, linear-gradient(to top right, #339efe, #45eec2) border-box;
+    border: 2px solid transparent;
+    border-radius:100px
+}
+
+button:focus {
+    outline:none
+}
+
+.block-button img {
+    height: 20px;
+    margin-right:5px
+}
+
+.block-button p {
+    flex-basis:75%
+}
+
+.toast-container {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    margin-top:18px
+}
+
+.toast {
+    visibility:hidden
+}
+
+.toast-show {
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    font-family: Roboto, sans-serif;
+    font-size: 13px;
+    height: 30px;
+    justify-content: center;
+    overflow: auto;
+    text-align: center;
+    visibility: visible;
+    width:250px
+}
+
+.background {
+    color:#000
+}
+
+.ansi-black-fg {
+    color:#616161
+}
+
+.ansi-red-fg {
+    color:#ff8272
+}
+
+.ansi-green-fg {
+    color:#b4fa72
+}
+
+.ansi-yellow-fg {
+    color:#fefdc2
+}
+
+.ansi-blue-fg {
+    color:#a5d5fe
+}
+
+.ansi-magenta-fg {
+    color:#ff8ffd
+}
+
+.ansi-cyan-fg {
+    color:#d0d1fe
+}
+
+.ansi-white-fg {
+    color:#f1f1f1
+}
+
+.ansi-black-bg {
+    background-color:#616161
+}
+
+.ansi-red-bg {
+    background-color:#ff8272
+}
+
+.ansi-green-bg {
+    background-color:#b4fa72
+}
+
+.ansi-yellow-bg {
+    background-color:#fefdc2
+}
+
+.ansi-blue-bg {
+    background-color:#a5d5fe
+}
+
+.ansi-magenta-bg {
+    background-color:#ff8ffd
+}
+
+.ansi-cyan-bg {
+    background-color:#d0d1fe
+}
+
+.ansi-white-bg {
+    background-color:#f1f1f1
+}
+
+.ansi-bright-black-fg {
+    color:#8e8e8e
+}
+
+.ansi-bright-red-fg {
+    color:#ffc4bd
+}
+
+.ansi-bright-green-fg {
+    color:#d6fcb9
+}
+
+.ansi-bright-yellow-fg {
+    color:#fefdd5
+}
+
+.ansi-bright-blue-fg {
+    color:#c1e3fe
+}
+
+.ansi-bright-magenta-fg {
+    color:#ffb1fe
+}
+
+.ansi-bright-cyan-fg {
+    color:#e5e6fe
+}
+
+.ansi-bright-white-fg {
+    color:#feffff
+}
+
+.ansi-bright-black-bg {
+    background-color:#8e8e8e
+}
+
+.ansi-bright-red-bg {
+    background-color:#ffc4bd
+}
+
+.ansi-bright-green-bg {
+    background-color:#d6fcb9
+}
+
+.ansi-bright-yellow-bg {
+    background-color:#fefdd5
+}
+
+.ansi-bright-blue-bg {
+    background-color:#c1e3fe
+}
+
+.ansi-bright-magenta-bg {
+    background-color:#ffb1fe
+}
+
+.ansi-bright-cyan-bg {
+    background-color:#e5e6fe
+}
+
+.ansi-bright-white-bg {
+    background-color:#feffff
+}
+
+.ansi-bold {
+    font-weight:700
+}
+
+.ansi-italic {
+    font-style:italic
+}
+
+.ansi-underline {
+    text-decoration:underline
+}
+
+.ansi-strikethrough {
+    text-decoration:line-through
+}
+
+.ansi-dim {
+    opacity:.5
+}
+
+.ansi-hidden {
+    visibility:hidden
+}
+
+.ansi-palette-0-fg {
+    color:#000
+}
+
+.ansi-palette-0-bg {
+    background-color:#000
+}
+
+.ansi-palette-1-fg {
+    color:maroon
+}
+
+.ansi-palette-1-bg {
+    background-color:maroon
+}
+
+.ansi-palette-2-fg {
+    color:green
+}
+
+.ansi-palette-2-bg {
+    background-color:green
+}
+
+.ansi-palette-3-fg {
+    color:olive
+}
+
+.ansi-palette-3-bg {
+    background-color:olive
+}
+
+.ansi-palette-4-fg {
+    color:navy
+}
+
+.ansi-palette-4-bg {
+    background-color:navy
+}
+
+.ansi-palette-5-fg {
+    color:purple
+}
+
+.ansi-palette-5-bg {
+    background-color:purple
+}
+
+.ansi-palette-6-fg {
+    color:teal
+}
+
+.ansi-palette-6-bg {
+    background-color:teal
+}
+
+.ansi-palette-7-fg {
+    color:silver
+}
+
+.ansi-palette-7-bg {
+    background-color:silver
+}
+
+.ansi-palette-8-fg {
+    color:grey
+}
+
+.ansi-palette-8-bg {
+    background-color:grey
+}
+
+.ansi-palette-9-fg {
+    color:red
+}
+
+.ansi-palette-9-bg {
+    background-color:red
+}
+
+.ansi-palette-10-fg {
+    color:#0f0
+}
+
+.ansi-palette-10-bg {
+    background-color:#0f0
+}
+
+.ansi-palette-11-fg {
+    color:#ff0
+}
+
+.ansi-palette-11-bg {
+    background-color:#ff0
+}
+
+.ansi-palette-12-fg {
+    color:#00f
+}
+
+.ansi-palette-12-bg {
+    background-color:#00f
+}
+
+.ansi-palette-13-fg {
+    color:#f0f
+}
+
+.ansi-palette-13-bg {
+    background-color:#f0f
+}
+
+.ansi-palette-14-fg {
+    color:#0ff
+}
+
+.ansi-palette-14-bg {
+    background-color:#0ff
+}
+
+.ansi-palette-15-fg {
+    color:#fff
+}
+
+.ansi-palette-15-bg {
+    background-color:#fff
+}
+
+.ansi-palette-16-fg {
+    color:#000
+}
+
+.ansi-palette-16-bg {
+    background-color:#000
+}
+
+.ansi-palette-17-fg {
+    color:#00005f
+}
+
+.ansi-palette-17-bg {
+    background-color:#00005f
+}
+
+.ansi-palette-18-fg {
+    color:#000087
+}
+
+.ansi-palette-18-bg {
+    background-color:#000087
+}
+
+.ansi-palette-19-fg {
+    color:#0000af
+}
+
+.ansi-palette-19-bg {
+    background-color:#0000af
+}
+
+.ansi-palette-20-fg {
+    color:#0000d7
+}
+
+.ansi-palette-20-bg {
+    background-color:#0000d7
+}
+
+.ansi-palette-21-fg {
+    color:#00f
+}
+
+.ansi-palette-21-bg {
+    background-color:#00f
+}
+
+.ansi-palette-22-fg {
+    color:#005f00
+}
+
+.ansi-palette-22-bg {
+    background-color:#005f00
+}
+
+.ansi-palette-23-fg {
+    color:#005f5f
+}
+
+.ansi-palette-23-bg {
+    background-color:#005f5f
+}
+
+.ansi-palette-24-fg {
+    color:#005f87
+}
+
+.ansi-palette-24-bg {
+    background-color:#005f87
+}
+
+.ansi-palette-25-fg {
+    color:#005faf
+}
+
+.ansi-palette-25-bg {
+    background-color:#005faf
+}
+
+.ansi-palette-26-fg {
+    color:#005fd7
+}
+
+.ansi-palette-26-bg {
+    background-color:#005fd7
+}
+
+.ansi-palette-27-fg {
+    color:#005fff
+}
+
+.ansi-palette-27-bg {
+    background-color:#005fff
+}
+
+.ansi-palette-28-fg {
+    color:#008700
+}
+
+.ansi-palette-28-bg {
+    background-color:#008700
+}
+
+.ansi-palette-29-fg {
+    color:#00875f
+}
+
+.ansi-palette-29-bg {
+    background-color:#00875f
+}
+
+.ansi-palette-30-fg {
+    color:#008787
+}
+
+.ansi-palette-30-bg {
+    background-color:#008787
+}
+
+.ansi-palette-31-fg {
+    color:#0087af
+}
+
+.ansi-palette-31-bg {
+    background-color:#0087af
+}
+
+.ansi-palette-32-fg {
+    color:#0087d7
+}
+
+.ansi-palette-32-bg {
+    background-color:#0087d7
+}
+
+.ansi-palette-33-fg {
+    color:#0087ff
+}
+
+.ansi-palette-33-bg {
+    background-color:#0087ff
+}
+
+.ansi-palette-34-fg {
+    color:#00af00
+}
+
+.ansi-palette-34-bg {
+    background-color:#00af00
+}
+
+.ansi-palette-35-fg {
+    color:#00af5f
+}
+
+.ansi-palette-35-bg {
+    background-color:#00af5f
+}
+
+.ansi-palette-36-fg {
+    color:#00af87
+}
+
+.ansi-palette-36-bg {
+    background-color:#00af87
+}
+
+.ansi-palette-37-fg {
+    color:#00afaf
+}
+
+.ansi-palette-37-bg {
+    background-color:#00afaf
+}
+
+.ansi-palette-38-fg {
+    color:#00afd7
+}
+
+.ansi-palette-38-bg {
+    background-color:#00afd7
+}
+
+.ansi-palette-39-fg {
+    color:#00afff
+}
+
+.ansi-palette-39-bg {
+    background-color:#00afff
+}
+
+.ansi-palette-40-fg {
+    color:#00d700
+}
+
+.ansi-palette-40-bg {
+    background-color:#00d700
+}
+
+.ansi-palette-41-fg {
+    color:#00d75f
+}
+
+.ansi-palette-41-bg {
+    background-color:#00d75f
+}
+
+.ansi-palette-42-fg {
+    color:#00d787
+}
+
+.ansi-palette-42-bg {
+    background-color:#00d787
+}
+
+.ansi-palette-43-fg {
+    color:#00d7af
+}
+
+.ansi-palette-43-bg {
+    background-color:#00d7af
+}
+
+.ansi-palette-44-fg {
+    color:#00d7d7
+}
+
+.ansi-palette-44-bg {
+    background-color:#00d7d7
+}
+
+.ansi-palette-45-fg {
+    color:#00d7ff
+}
+
+.ansi-palette-45-bg {
+    background-color:#00d7ff
+}
+
+.ansi-palette-46-fg {
+    color:#0f0
+}
+
+.ansi-palette-46-bg {
+    background-color:#0f0
+}
+
+.ansi-palette-47-fg {
+    color:#00ff5f
+}
+
+.ansi-palette-47-bg {
+    background-color:#00ff5f
+}
+
+.ansi-palette-48-fg {
+    color:#00ff87
+}
+
+.ansi-palette-48-bg {
+    background-color:#00ff87
+}
+
+.ansi-palette-49-fg {
+    color:#00ffaf
+}
+
+.ansi-palette-49-bg {
+    background-color:#00ffaf
+}
+
+.ansi-palette-50-fg {
+    color:#00ffd7
+}
+
+.ansi-palette-50-bg {
+    background-color:#00ffd7
+}
+
+.ansi-palette-51-fg {
+    color:#0ff
+}
+
+.ansi-palette-51-bg {
+    background-color:#0ff
+}
+
+.ansi-palette-52-fg {
+    color:#5f0000
+}
+
+.ansi-palette-52-bg {
+    background-color:#5f0000
+}
+
+.ansi-palette-53-fg {
+    color:#5f005f
+}
+
+.ansi-palette-53-bg {
+    background-color:#5f005f
+}
+
+.ansi-palette-54-fg {
+    color:#5f0087
+}
+
+.ansi-palette-54-bg {
+    background-color:#5f0087
+}
+
+.ansi-palette-55-fg {
+    color:#5f00af
+}
+
+.ansi-palette-55-bg {
+    background-color:#5f00af
+}
+
+.ansi-palette-56-fg {
+    color:#5f00d7
+}
+
+.ansi-palette-56-bg {
+    background-color:#5f00d7
+}
+
+.ansi-palette-57-fg {
+    color:#5f00ff
+}
+
+.ansi-palette-57-bg {
+    background-color:#5f00ff
+}
+
+.ansi-palette-58-fg {
+    color:#5f5f00
+}
+
+.ansi-palette-58-bg {
+    background-color:#5f5f00
+}
+
+.ansi-palette-59-fg {
+    color:#5f5f5f
+}
+
+.ansi-palette-59-bg {
+    background-color:#5f5f5f
+}
+
+.ansi-palette-60-fg {
+    color:#5f5f87
+}
+
+.ansi-palette-60-bg {
+    background-color:#5f5f87
+}
+
+.ansi-palette-61-fg {
+    color:#5f5faf
+}
+
+.ansi-palette-61-bg {
+    background-color:#5f5faf
+}
+
+.ansi-palette-62-fg {
+    color:#5f5fd7
+}
+
+.ansi-palette-62-bg {
+    background-color:#5f5fd7
+}
+
+.ansi-palette-63-fg {
+    color:#5f5fff
+}
+
+.ansi-palette-63-bg {
+    background-color:#5f5fff
+}
+
+.ansi-palette-64-fg {
+    color:#5f8700
+}
+
+.ansi-palette-64-bg {
+    background-color:#5f8700
+}
+
+.ansi-palette-65-fg {
+    color:#5f875f
+}
+
+.ansi-palette-65-bg {
+    background-color:#5f875f
+}
+
+.ansi-palette-66-fg {
+    color:#5f8787
+}
+
+.ansi-palette-66-bg {
+    background-color:#5f8787
+}
+
+.ansi-palette-67-fg {
+    color:#5f87af
+}
+
+.ansi-palette-67-bg {
+    background-color:#5f87af
+}
+
+.ansi-palette-68-fg {
+    color:#5f87d7
+}
+
+.ansi-palette-68-bg {
+    background-color:#5f87d7
+}
+
+.ansi-palette-69-fg {
+    color:#5f87ff
+}
+
+.ansi-palette-69-bg {
+    background-color:#5f87ff
+}
+
+.ansi-palette-70-fg {
+    color:#5faf00
+}
+
+.ansi-palette-70-bg {
+    background-color:#5faf00
+}
+
+.ansi-palette-71-fg {
+    color:#5faf5f
+}
+
+.ansi-palette-71-bg {
+    background-color:#5faf5f
+}
+
+.ansi-palette-72-fg {
+    color:#5faf87
+}
+
+.ansi-palette-72-bg {
+    background-color:#5faf87
+}
+
+.ansi-palette-73-fg {
+    color:#5fafaf
+}
+
+.ansi-palette-73-bg {
+    background-color:#5fafaf
+}
+
+.ansi-palette-74-fg {
+    color:#5fafd7
+}
+
+.ansi-palette-74-bg {
+    background-color:#5fafd7
+}
+
+.ansi-palette-75-fg {
+    color:#5fafff
+}
+
+.ansi-palette-75-bg {
+    background-color:#5fafff
+}
+
+.ansi-palette-76-fg {
+    color:#5fd700
+}
+
+.ansi-palette-76-bg {
+    background-color:#5fd700
+}
+
+.ansi-palette-77-fg {
+    color:#5fd75f
+}
+
+.ansi-palette-77-bg {
+    background-color:#5fd75f
+}
+
+.ansi-palette-78-fg {
+    color:#5fd787
+}
+
+.ansi-palette-78-bg {
+    background-color:#5fd787
+}
+
+.ansi-palette-79-fg {
+    color:#5fd7af
+}
+
+.ansi-palette-79-bg {
+    background-color:#5fd7af
+}
+
+.ansi-palette-80-fg {
+    color:#5fd7d7
+}
+
+.ansi-palette-80-bg {
+    background-color:#5fd7d7
+}
+
+.ansi-palette-81-fg {
+    color:#5fd7ff
+}
+
+.ansi-palette-81-bg {
+    background-color:#5fd7ff
+}
+
+.ansi-palette-82-fg {
+    color:#5fff00
+}
+
+.ansi-palette-82-bg {
+    background-color:#5fff00
+}
+
+.ansi-palette-83-fg {
+    color:#5fff5f
+}
+
+.ansi-palette-83-bg {
+    background-color:#5fff5f
+}
+
+.ansi-palette-84-fg {
+    color:#5fff87
+}
+
+.ansi-palette-84-bg {
+    background-color:#5fff87
+}
+
+.ansi-palette-85-fg {
+    color:#5fffaf
+}
+
+.ansi-palette-85-bg {
+    background-color:#5fffaf
+}
+
+.ansi-palette-86-fg {
+    color:#5fffd7
+}
+
+.ansi-palette-86-bg {
+    background-color:#5fffd7
+}
+
+.ansi-palette-87-fg {
+    color:#5fffff
+}
+
+.ansi-palette-87-bg {
+    background-color:#5fffff
+}
+
+.ansi-palette-88-fg {
+    color:#870000
+}
+
+.ansi-palette-88-bg {
+    background-color:#870000
+}
+
+.ansi-palette-89-fg {
+    color:#87005f
+}
+
+.ansi-palette-89-bg {
+    background-color:#87005f
+}
+
+.ansi-palette-90-fg {
+    color:#870087
+}
+
+.ansi-palette-90-bg {
+    background-color:#870087
+}
+
+.ansi-palette-91-fg {
+    color:#8700af
+}
+
+.ansi-palette-91-bg {
+    background-color:#8700af
+}
+
+.ansi-palette-92-fg {
+    color:#8700d7
+}
+
+.ansi-palette-92-bg {
+    background-color:#8700d7
+}
+
+.ansi-palette-93-fg {
+    color:#8700ff
+}
+
+.ansi-palette-93-bg {
+    background-color:#8700ff
+}
+
+.ansi-palette-94-fg {
+    color:#875f00
+}
+
+.ansi-palette-94-bg {
+    background-color:#875f00
+}
+
+.ansi-palette-95-fg {
+    color:#875f5f
+}
+
+.ansi-palette-95-bg {
+    background-color:#875f5f
+}
+
+.ansi-palette-96-fg {
+    color:#875f87
+}
+
+.ansi-palette-96-bg {
+    background-color:#875f87
+}
+
+.ansi-palette-97-fg {
+    color:#875faf
+}
+
+.ansi-palette-97-bg {
+    background-color:#875faf
+}
+
+.ansi-palette-98-fg {
+    color:#875fd7
+}
+
+.ansi-palette-98-bg {
+    background-color:#875fd7
+}
+
+.ansi-palette-99-fg {
+    color:#875fff
+}
+
+.ansi-palette-99-bg {
+    background-color:#875fff
+}
+
+.ansi-palette-100-fg {
+    color:#878700
+}
+
+.ansi-palette-100-bg {
+    background-color:#878700
+}
+
+.ansi-palette-101-fg {
+    color:#87875f
+}
+
+.ansi-palette-101-bg {
+    background-color:#87875f
+}
+
+.ansi-palette-102-fg {
+    color:#878787
+}
+
+.ansi-palette-102-bg {
+    background-color:#878787
+}
+
+.ansi-palette-103-fg {
+    color:#8787af
+}
+
+.ansi-palette-103-bg {
+    background-color:#8787af
+}
+
+.ansi-palette-104-fg {
+    color:#8787d7
+}
+
+.ansi-palette-104-bg {
+    background-color:#8787d7
+}
+
+.ansi-palette-105-fg {
+    color:#8787ff
+}
+
+.ansi-palette-105-bg {
+    background-color:#8787ff
+}
+
+.ansi-palette-106-fg {
+    color:#87af00
+}
+
+.ansi-palette-106-bg {
+    background-color:#87af00
+}
+
+.ansi-palette-107-fg {
+    color:#87af5f
+}
+
+.ansi-palette-107-bg {
+    background-color:#87af5f
+}
+
+.ansi-palette-108-fg {
+    color:#87af87
+}
+
+.ansi-palette-108-bg {
+    background-color:#87af87
+}
+
+.ansi-palette-109-fg {
+    color:#87afaf
+}
+
+.ansi-palette-109-bg {
+    background-color:#87afaf
+}
+
+.ansi-palette-110-fg {
+    color:#87afd7
+}
+
+.ansi-palette-110-bg {
+    background-color:#87afd7
+}
+
+.ansi-palette-111-fg {
+    color:#87afff
+}
+
+.ansi-palette-111-bg {
+    background-color:#87afff
+}
+
+.ansi-palette-112-fg {
+    color:#87d700
+}
+
+.ansi-palette-112-bg {
+    background-color:#87d700
+}
+
+.ansi-palette-113-fg {
+    color:#87d75f
+}
+
+.ansi-palette-113-bg {
+    background-color:#87d75f
+}
+
+.ansi-palette-114-fg {
+    color:#87d787
+}
+
+.ansi-palette-114-bg {
+    background-color:#87d787
+}
+
+.ansi-palette-115-fg {
+    color:#87d7af
+}
+
+.ansi-palette-115-bg {
+    background-color:#87d7af
+}
+
+.ansi-palette-116-fg {
+    color:#87d7d7
+}
+
+.ansi-palette-116-bg {
+    background-color:#87d7d7
+}
+
+.ansi-palette-117-fg {
+    color:#87d7ff
+}
+
+.ansi-palette-117-bg {
+    background-color:#87d7ff
+}
+
+.ansi-palette-118-fg {
+    color:#87ff00
+}
+
+.ansi-palette-118-bg {
+    background-color:#87ff00
+}
+
+.ansi-palette-119-fg {
+    color:#87ff5f
+}
+
+.ansi-palette-119-bg {
+    background-color:#87ff5f
+}
+
+.ansi-palette-120-fg {
+    color:#87ff87
+}
+
+.ansi-palette-120-bg {
+    background-color:#87ff87
+}
+
+.ansi-palette-121-fg {
+    color:#87ffaf
+}
+
+.ansi-palette-121-bg {
+    background-color:#87ffaf
+}
+
+.ansi-palette-122-fg {
+    color:#87ffd7
+}
+
+.ansi-palette-122-bg {
+    background-color:#87ffd7
+}
+
+.ansi-palette-123-fg {
+    color:#87ffff
+}
+
+.ansi-palette-123-bg {
+    background-color:#87ffff
+}
+
+.ansi-palette-124-fg {
+    color:#af0000
+}
+
+.ansi-palette-124-bg {
+    background-color:#af0000
+}
+
+.ansi-palette-125-fg {
+    color:#af005f
+}
+
+.ansi-palette-125-bg {
+    background-color:#af005f
+}
+
+.ansi-palette-126-fg {
+    color:#af0087
+}
+
+.ansi-palette-126-bg {
+    background-color:#af0087
+}
+
+.ansi-palette-127-fg {
+    color:#af00af
+}
+
+.ansi-palette-127-bg {
+    background-color:#af00af
+}
+
+.ansi-palette-128-fg {
+    color:#af00d7
+}
+
+.ansi-palette-128-bg {
+    background-color:#af00d7
+}
+
+.ansi-palette-129-fg {
+    color:#af00ff
+}
+
+.ansi-palette-129-bg {
+    background-color:#af00ff
+}
+
+.ansi-palette-130-fg {
+    color:#af5f00
+}
+
+.ansi-palette-130-bg {
+    background-color:#af5f00
+}
+
+.ansi-palette-131-fg {
+    color:#af5f5f
+}
+
+.ansi-palette-131-bg {
+    background-color:#af5f5f
+}
+
+.ansi-palette-132-fg {
+    color:#af5f87
+}
+
+.ansi-palette-132-bg {
+    background-color:#af5f87
+}
+
+.ansi-palette-133-fg {
+    color:#af5faf
+}
+
+.ansi-palette-133-bg {
+    background-color:#af5faf
+}
+
+.ansi-palette-134-fg {
+    color:#af5fd7
+}
+
+.ansi-palette-134-bg {
+    background-color:#af5fd7
+}
+
+.ansi-palette-135-fg {
+    color:#af5fff
+}
+
+.ansi-palette-135-bg {
+    background-color:#af5fff
+}
+
+.ansi-palette-136-fg {
+    color:#af8700
+}
+
+.ansi-palette-136-bg {
+    background-color:#af8700
+}
+
+.ansi-palette-137-fg {
+    color:#af875f
+}
+
+.ansi-palette-137-bg {
+    background-color:#af875f
+}
+
+.ansi-palette-138-fg {
+    color:#af8787
+}
+
+.ansi-palette-138-bg {
+    background-color:#af8787
+}
+
+.ansi-palette-139-fg {
+    color:#af87af
+}
+
+.ansi-palette-139-bg {
+    background-color:#af87af
+}
+
+.ansi-palette-140-fg {
+    color:#af87d7
+}
+
+.ansi-palette-140-bg {
+    background-color:#af87d7
+}
+
+.ansi-palette-141-fg {
+    color:#af87ff
+}
+
+.ansi-palette-141-bg {
+    background-color:#af87ff
+}
+
+.ansi-palette-142-fg {
+    color:#afaf00
+}
+
+.ansi-palette-142-bg {
+    background-color:#afaf00
+}
+
+.ansi-palette-143-fg {
+    color:#afaf5f
+}
+
+.ansi-palette-143-bg {
+    background-color:#afaf5f
+}
+
+.ansi-palette-144-fg {
+    color:#afaf87
+}
+
+.ansi-palette-144-bg {
+    background-color:#afaf87
+}
+
+.ansi-palette-145-fg {
+    color:#afafaf
+}
+
+.ansi-palette-145-bg {
+    background-color:#afafaf
+}
+
+.ansi-palette-146-fg {
+    color:#afafd7
+}
+
+.ansi-palette-146-bg {
+    background-color:#afafd7
+}
+
+.ansi-palette-147-fg {
+    color:#afafff
+}
+
+.ansi-palette-147-bg {
+    background-color:#afafff
+}
+
+.ansi-palette-148-fg {
+    color:#afd700
+}
+
+.ansi-palette-148-bg {
+    background-color:#afd700
+}
+
+.ansi-palette-149-fg {
+    color:#afd75f
+}
+
+.ansi-palette-149-bg {
+    background-color:#afd75f
+}
+
+.ansi-palette-150-fg {
+    color:#afd787
+}
+
+.ansi-palette-150-bg {
+    background-color:#afd787
+}
+
+.ansi-palette-151-fg {
+    color:#afd7af
+}
+
+.ansi-palette-151-bg {
+    background-color:#afd7af
+}
+
+.ansi-palette-152-fg {
+    color:#afd7d7
+}
+
+.ansi-palette-152-bg {
+    background-color:#afd7d7
+}
+
+.ansi-palette-153-fg {
+    color:#afd7ff
+}
+
+.ansi-palette-153-bg {
+    background-color:#afd7ff
+}
+
+.ansi-palette-154-fg {
+    color:#afff00
+}
+
+.ansi-palette-154-bg {
+    background-color:#afff00
+}
+
+.ansi-palette-155-fg {
+    color:#afff5f
+}
+
+.ansi-palette-155-bg {
+    background-color:#afff5f
+}
+
+.ansi-palette-156-fg {
+    color:#afff87
+}
+
+.ansi-palette-156-bg {
+    background-color:#afff87
+}
+
+.ansi-palette-157-fg {
+    color:#afffaf
+}
+
+.ansi-palette-157-bg {
+    background-color:#afffaf
+}
+
+.ansi-palette-158-fg {
+    color:#afffd7
+}
+
+.ansi-palette-158-bg {
+    background-color:#afffd7
+}
+
+.ansi-palette-159-fg {
+    color:#afffff
+}
+
+.ansi-palette-159-bg {
+    background-color:#afffff
+}
+
+.ansi-palette-160-fg {
+    color:#d70000
+}
+
+.ansi-palette-160-bg {
+    background-color:#d70000
+}
+
+.ansi-palette-161-fg {
+    color:#d7005f
+}
+
+.ansi-palette-161-bg {
+    background-color:#d7005f
+}
+
+.ansi-palette-162-fg {
+    color:#d70087
+}
+
+.ansi-palette-162-bg {
+    background-color:#d70087
+}
+
+.ansi-palette-163-fg {
+    color:#d700af
+}
+
+.ansi-palette-163-bg {
+    background-color:#d700af
+}
+
+.ansi-palette-164-fg {
+    color:#d700d7
+}
+
+.ansi-palette-164-bg {
+    background-color:#d700d7
+}
+
+.ansi-palette-165-fg {
+    color:#d700ff
+}
+
+.ansi-palette-165-bg {
+    background-color:#d700ff
+}
+
+.ansi-palette-166-fg {
+    color:#d75f00
+}
+
+.ansi-palette-166-bg {
+    background-color:#d75f00
+}
+
+.ansi-palette-167-fg {
+    color:#d75f5f
+}
+
+.ansi-palette-167-bg {
+    background-color:#d75f5f
+}
+
+.ansi-palette-168-fg {
+    color:#d75f87
+}
+
+.ansi-palette-168-bg {
+    background-color:#d75f87
+}
+
+.ansi-palette-169-fg {
+    color:#d75faf
+}
+
+.ansi-palette-169-bg {
+    background-color:#d75faf
+}
+
+.ansi-palette-170-fg {
+    color:#d75fd7
+}
+
+.ansi-palette-170-bg {
+    background-color:#d75fd7
+}
+
+.ansi-palette-171-fg {
+    color:#d75fff
+}
+
+.ansi-palette-171-bg {
+    background-color:#d75fff
+}
+
+.ansi-palette-172-fg {
+    color:#d78700
+}
+
+.ansi-palette-172-bg {
+    background-color:#d78700
+}
+
+.ansi-palette-173-fg {
+    color:#d7875f
+}
+
+.ansi-palette-173-bg {
+    background-color:#d7875f
+}
+
+.ansi-palette-174-fg {
+    color:#d78787
+}
+
+.ansi-palette-174-bg {
+    background-color:#d78787
+}
+
+.ansi-palette-175-fg {
+    color:#d787af
+}
+
+.ansi-palette-175-bg {
+    background-color:#d787af
+}
+
+.ansi-palette-176-fg {
+    color:#d787d7
+}
+
+.ansi-palette-176-bg {
+    background-color:#d787d7
+}
+
+.ansi-palette-177-fg {
+    color:#d787ff
+}
+
+.ansi-palette-177-bg {
+    background-color:#d787ff
+}
+
+.ansi-palette-178-fg {
+    color:#d7af00
+}
+
+.ansi-palette-178-bg {
+    background-color:#d7af00
+}
+
+.ansi-palette-179-fg {
+    color:#d7af5f
+}
+
+.ansi-palette-179-bg {
+    background-color:#d7af5f
+}
+
+.ansi-palette-180-fg {
+    color:#d7af87
+}
+
+.ansi-palette-180-bg {
+    background-color:#d7af87
+}
+
+.ansi-palette-181-fg {
+    color:#d7afaf
+}
+
+.ansi-palette-181-bg {
+    background-color:#d7afaf
+}
+
+.ansi-palette-182-fg {
+    color:#d7afd7
+}
+
+.ansi-palette-182-bg {
+    background-color:#d7afd7
+}
+
+.ansi-palette-183-fg {
+    color:#d7afff
+}
+
+.ansi-palette-183-bg {
+    background-color:#d7afff
+}
+
+.ansi-palette-184-fg {
+    color:#d7d700
+}
+
+.ansi-palette-184-bg {
+    background-color:#d7d700
+}
+
+.ansi-palette-185-fg {
+    color:#d7d75f
+}
+
+.ansi-palette-185-bg {
+    background-color:#d7d75f
+}
+
+.ansi-palette-186-fg {
+    color:#d7d787
+}
+
+.ansi-palette-186-bg {
+    background-color:#d7d787
+}
+
+.ansi-palette-187-fg {
+    color:#d7d7af
+}
+
+.ansi-palette-187-bg {
+    background-color:#d7d7af
+}
+
+.ansi-palette-188-fg {
+    color:#d7d7d7
+}
+
+.ansi-palette-188-bg {
+    background-color:#d7d7d7
+}
+
+.ansi-palette-189-fg {
+    color:#d7d7ff
+}
+
+.ansi-palette-189-bg {
+    background-color:#d7d7ff
+}
+
+.ansi-palette-190-fg {
+    color:#d7ff00
+}
+
+.ansi-palette-190-bg {
+    background-color:#d7ff00
+}
+
+.ansi-palette-191-fg {
+    color:#d7ff5f
+}
+
+.ansi-palette-191-bg {
+    background-color:#d7ff5f
+}
+
+.ansi-palette-192-fg {
+    color:#d7ff87
+}
+
+.ansi-palette-192-bg {
+    background-color:#d7ff87
+}
+
+.ansi-palette-193-fg {
+    color:#d7ffaf
+}
+
+.ansi-palette-193-bg {
+    background-color:#d7ffaf
+}
+
+.ansi-palette-194-fg {
+    color:#d7ffd7
+}
+
+.ansi-palette-194-bg {
+    background-color:#d7ffd7
+}
+
+.ansi-palette-195-fg {
+    color:#d7ffff
+}
+
+.ansi-palette-195-bg {
+    background-color:#d7ffff
+}
+
+.ansi-palette-196-fg {
+    color:red
+}
+
+.ansi-palette-196-bg {
+    background-color:red
+}
+
+.ansi-palette-197-fg {
+    color:#ff005f
+}
+
+.ansi-palette-197-bg {
+    background-color:#ff005f
+}
+
+.ansi-palette-198-fg {
+    color:#ff0087
+}
+
+.ansi-palette-198-bg {
+    background-color:#ff0087
+}
+
+.ansi-palette-199-fg {
+    color:#ff00af
+}
+
+.ansi-palette-199-bg {
+    background-color:#ff00af
+}
+
+.ansi-palette-200-fg {
+    color:#ff00d7
+}
+
+.ansi-palette-200-bg {
+    background-color:#ff00d7
+}
+
+.ansi-palette-201-fg {
+    color:#f0f
+}
+
+.ansi-palette-201-bg {
+    background-color:#f0f
+}
+
+.ansi-palette-202-fg {
+    color:#ff5f00
+}
+
+.ansi-palette-202-bg {
+    background-color:#ff5f00
+}
+
+.ansi-palette-203-fg {
+    color:#ff5f5f
+}
+
+.ansi-palette-203-bg {
+    background-color:#ff5f5f
+}
+
+.ansi-palette-204-fg {
+    color:#ff5f87
+}
+
+.ansi-palette-204-bg {
+    background-color:#ff5f87
+}
+
+.ansi-palette-205-fg {
+    color:#ff5faf
+}
+
+.ansi-palette-205-bg {
+    background-color:#ff5faf
+}
+
+.ansi-palette-206-fg {
+    color:#ff5fd7
+}
+
+.ansi-palette-206-bg {
+    background-color:#ff5fd7
+}
+
+.ansi-palette-207-fg {
+    color:#ff5fff
+}
+
+.ansi-palette-207-bg {
+    background-color:#ff5fff
+}
+
+.ansi-palette-208-fg {
+    color:#ff8700
+}
+
+.ansi-palette-208-bg {
+    background-color:#ff8700
+}
+
+.ansi-palette-209-fg {
+    color:#ff875f
+}
+
+.ansi-palette-209-bg {
+    background-color:#ff875f
+}
+
+.ansi-palette-210-fg {
+    color:#ff8787
+}
+
+.ansi-palette-210-bg {
+    background-color:#ff8787
+}
+
+.ansi-palette-211-fg {
+    color:#ff87af
+}
+
+.ansi-palette-211-bg {
+    background-color:#ff87af
+}
+
+.ansi-palette-212-fg {
+    color:#ff87d7
+}
+
+.ansi-palette-212-bg {
+    background-color:#ff87d7
+}
+
+.ansi-palette-213-fg {
+    color:#ff87ff
+}
+
+.ansi-palette-213-bg {
+    background-color:#ff87ff
+}
+
+.ansi-palette-214-fg {
+    color:#ffaf00
+}
+
+.ansi-palette-214-bg {
+    background-color:#ffaf00
+}
+
+.ansi-palette-215-fg {
+    color:#ffaf5f
+}
+
+.ansi-palette-215-bg {
+    background-color:#ffaf5f
+}
+
+.ansi-palette-216-fg {
+    color:#ffaf87
+}
+
+.ansi-palette-216-bg {
+    background-color:#ffaf87
+}
+
+.ansi-palette-217-fg {
+    color:#ffafaf
+}
+
+.ansi-palette-217-bg {
+    background-color:#ffafaf
+}
+
+.ansi-palette-218-fg {
+    color:#ffafd7
+}
+
+.ansi-palette-218-bg {
+    background-color:#ffafd7
+}
+
+.ansi-palette-219-fg {
+    color:#ffafff
+}
+
+.ansi-palette-219-bg {
+    background-color:#ffafff
+}
+
+.ansi-palette-220-fg {
+    color:gold
+}
+
+.ansi-palette-220-bg {
+    background-color:gold
+}
+
+.ansi-palette-221-fg {
+    color:#ffd75f
+}
+
+.ansi-palette-221-bg {
+    background-color:#ffd75f
+}
+
+.ansi-palette-222-fg {
+    color:#ffd787
+}
+
+.ansi-palette-222-bg {
+    background-color:#ffd787
+}
+
+.ansi-palette-223-fg {
+    color:#ffd7af
+}
+
+.ansi-palette-223-bg {
+    background-color:#ffd7af
+}
+
+.ansi-palette-224-fg {
+    color:#ffd7d7
+}
+
+.ansi-palette-224-bg {
+    background-color:#ffd7d7
+}
+
+.ansi-palette-225-fg {
+    color:#ffd7ff
+}
+
+.ansi-palette-225-bg {
+    background-color:#ffd7ff
+}
+
+.ansi-palette-226-fg {
+    color:#ff0
+}
+
+.ansi-palette-226-bg {
+    background-color:#ff0
+}
+
+.ansi-palette-227-fg {
+    color:#ffff5f
+}
+
+.ansi-palette-227-bg {
+    background-color:#ffff5f
+}
+
+.ansi-palette-228-fg {
+    color:#ffff87
+}
+
+.ansi-palette-228-bg {
+    background-color:#ffff87
+}
+
+.ansi-palette-229-fg {
+    color:#ffffaf
+}
+
+.ansi-palette-229-bg {
+    background-color:#ffffaf
+}
+
+.ansi-palette-230-fg {
+    color:#ffffd7
+}
+
+.ansi-palette-230-bg {
+    background-color:#ffffd7
+}
+
+.ansi-palette-231-fg {
+    color:#fff
+}
+
+.ansi-palette-231-bg {
+    background-color:#fff
+}
+
+.ansi-palette-232-fg {
+    color:#080808
+}
+
+.ansi-palette-232-bg {
+    background-color:#080808
+}
+
+.ansi-palette-233-fg {
+    color:#121212
+}
+
+.ansi-palette-233-bg {
+    background-color:#121212
+}
+
+.ansi-palette-234-fg {
+    color:#1c1c1c
+}
+
+.ansi-palette-234-bg {
+    background-color:#1c1c1c
+}
+
+.ansi-palette-235-fg {
+    color:#262626
+}
+
+.ansi-palette-235-bg {
+    background-color:#262626
+}
+
+.ansi-palette-236-fg {
+    color:#303030
+}
+
+.ansi-palette-236-bg {
+    background-color:#303030
+}
+
+.ansi-palette-237-fg {
+    color:#3a3a3a
+}
+
+.ansi-palette-237-bg {
+    background-color:#3a3a3a
+}
+
+.ansi-palette-238-fg {
+    color:#444
+}
+
+.ansi-palette-238-bg {
+    background-color:#444
+}
+
+.ansi-palette-239-fg {
+    color:#4e4e4e
+}
+
+.ansi-palette-239-bg {
+    background-color:#4e4e4e
+}
+
+.ansi-palette-240-fg {
+    color:#585858
+}
+
+.ansi-palette-240-bg {
+    background-color:#585858
+}
+
+.ansi-palette-241-fg {
+    color:#606060
+}
+
+.ansi-palette-241-bg {
+    background-color:#606060
+}
+
+.ansi-palette-242-fg {
+    color:#666
+}
+
+.ansi-palette-242-bg {
+    background-color:#666
+}
+
+.ansi-palette-243-fg {
+    color:#767676
+}
+
+.ansi-palette-243-bg {
+    background-color:#767676
+}
+
+.ansi-palette-244-fg {
+    color:grey
+}
+
+.ansi-palette-244-bg {
+    background-color:grey
+}
+
+.ansi-palette-245-fg {
+    color:#8a8a8a
+}
+
+.ansi-palette-245-bg {
+    background-color:#8a8a8a
+}
+
+.ansi-palette-246-fg {
+    color:#949494
+}
+
+.ansi-palette-246-bg {
+    background-color:#949494
+}
+
+.ansi-palette-247-fg {
+    color:#9e9e9e
+}
+
+.ansi-palette-247-bg {
+    background-color:#9e9e9e
+}
+
+.ansi-palette-248-fg {
+    color:#a8a8a8
+}
+
+.ansi-palette-248-bg {
+    background-color:#a8a8a8
+}
+
+.ansi-palette-249-fg {
+    color:#b2b2b2
+}
+
+.ansi-palette-249-bg {
+    background-color:#b2b2b2
+}
+
+.ansi-palette-250-fg {
+    color:#bcbcbc
+}
+
+.ansi-palette-250-bg {
+    background-color:#bcbcbc
+}
+
+.ansi-palette-251-fg {
+    color:#c6c6c6
+}
+
+.ansi-palette-251-bg {
+    background-color:#c6c6c6
+}
+
+.ansi-palette-252-fg {
+    color:#d0d0d0
+}
+
+.ansi-palette-252-bg {
+    background-color:#d0d0d0
+}
+
+.ansi-palette-253-fg {
+    color:#dadada
+}
+
+.ansi-palette-253-bg {
+    background-color:#dadada
+}
+
+.ansi-palette-254-fg {
+    color:#e4e4e4
+}
+
+.ansi-palette-254-bg {
+    background-color:#e4e4e4
+}
+
+.ansi-palette-255-fg {
+    color:#eee
+}
+
+.ansi-palette-255-bg {
+    background-color:#eee
+}
+
+details {
+    cursor:none
+}
+
+details > summary {
+    list-style:none
+}
+
+.dropdown-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    height: 24px;
+    padding: 0;
+    position: relative;
+    width:24px
+}
+
+.dropdown {
+    border-radius: 4px;
+    display: inline-block;
+    flex-shrink: 0 !important;
+    margin-bottom:auto
+}
+
+.command {
+    font-family: Hack;
+    font-size: medium;
+    font-weight:700
+}
+
+.prompt {
+    color: hsla(0, 0%, 100%, .6);
+    font-family: Hack;
+    font-size: smaller;
+    margin-bottom:5px
+}
+
+.prompt-and-command {
+    font-family: Hack;
+    font-size:medium
+}
+
+.prompt-command-column {
+    display: flex !important;
+    flex: auto;
+    flex-direction:column
+}
+
+.top-right {
+    font-size:18px
+}
+
+.dropdown-content {
+    background-color: #262626;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+    position: absolute;
+    right: 45px;
+    top:16px
+}
+
+.context-menu-icon {
+    filter:invert(100%) sepia(100%) saturate(2%) hue-rotate(353deg) brightness(105%) contrast(101%)
+}
+
+.dropdown-content a {
+    color: #000;
+    display: block;
+    text-decoration:none
+}
+
+.dropdown-content button {
+    color: hsla(0, 0%, 100%, .6);
+    display: block;
+    text-decoration:none
+}
+
+.dropdown:hover .dropdown-button {
+    background-color:hsla(0, 0%, 100%, .1)
+}
+
+.context-menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-inline-start:0
+}
+
+.context-menu-list button {
+    background-color: transparent;
+    border-style: none;
+    font-family: Roboto;
+    height: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+    width:100%
+}
+
+.context-menu-list button:hover {
+    background-color: #00c2ff;
+    color:#1b1a1a
+}
+
+@font-face {
+    font-family: Hack;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/fonts/hack-regular.woff2?sha=3114f1256) format("woff2"), url(https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/fonts/hack-regular.woff?sha=3114f1256) format("woff")
+}
+
+@font-face {
+    font-family: Hack;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/fonts/hack-bold.woff2?sha=3114f1256) format("woff2"), url(https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/fonts/hack-bold.woff?sha=3114f1256) format("woff")
+}
+
+@font-face {
+    font-family: Hack;
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/fonts/hack-italic.woff2?sha=3114f1256) format("woff2"), url(https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/fonts/hack-italic.woff?sha=3114f1256) format("woff")
+}
+
+@font-face {
+    font-family: Hack;
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/fonts/hack-bolditalic.woff2?sha=3114f1256) format("woff2"), url(https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/fonts/hack-bolditalic.woff?sha=3114f1256) format("woff")
+}
+
+.output {
+    font-family: Hack;
+    font-size: medium;
+    padding:15px
+}
+
+span {
+    white-space:pre
+}
+
+div {
+    word-wrap: break-word;
+    white-space:pre-wrap
+}
+
+.App-embed {
+    align-items: center;
+    background: linear-gradient(180.04deg, #14012c .04%, #000 99.96%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width:fit-content
+}
+
+.embed-name-header button {
+    align-items: center;
+    background: hsla(0, 0%, 100%, .05);
+    border: none;
+    border-radius: 6px;
+    color: hsla(0, 0%, 100%, .4);
+    display: inline-flex;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    height: 24px;
+    margin-left: 6px;
+    padding-left: 8px;
+    padding-right:10px
+}
+
+.embed-name-header button:hover {
+    background-color: #00c2ff;
+    color:#1b1a1a
+}
+
+.embed-name-header {
+    align-items: center;
+    background: hsla(0, 0%, 100%, .1);
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    flex-direction: row;
+    font-family: Hack;
+    font-size: medium;
+    height: 34px;
+    padding-left:16px
+}
+
+.block-title {
+    text-wrap: nowrap;
+    flex: 1 1;
+    overflow: hidden;
+    text-overflow:ellipsis
+}
+
+.button-group {
+    flex-shrink: 0;
+    margin:0 5px 0 8px
+}
+
+.icon {
+    margin-right: 4px;
+    width:15px
+}
+
+.block_wrapper {
+    background-color: #000;
+    border: 2px solid hsla(0, 0%, 100%, .1);
+    border-radius: 8px;
+    color: #f1f1f1;
+    position: relative;
+    z-index:0
+}
+
+.sticky-header {
+    align-items: center;
+    background: #000;
+    border-bottom: .1px solid gray;
+    border-top: 2px solid #1a1a1a;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index:1
+}
+
+.sticky-header-border {
+    color:#818181
+}
+
+.embed-footer {
+    align-items: center;
+    display: flex;
+    font-family: Roboto;
+    font-size: 12px;
+    padding-bottom:4px
+}
+
+.warp-logo-embed-footer {
+    transform:scale(.56)
+}
+
+.upgrade-background {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform:translate(-50%, -50%)
+}
+
+.upgrade-modal-containers-row {
+    display: flex;
+    gap:50px
+}
+
+.upgrade-plan-description {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    li {
+        background-image: url(/static/media/checkmark.svg);
+        background-position-y: 4px;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        list-style: none;
+        margin-left: -40px;
+        padding-bottom: 8px;
+        padding-left:24px
+    }
+
+    li:before {
+        display:none
+    }
+}
+
+.upgrade-modal-container {
+    background: hsla(45, 29%, 97%, .1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto, sans-serif;
+    justify-content: space-between;
+    width:400px
+}
+
+.upgrade-modal-container-background {
+    background: transparent;
+    filter: blur(250px);
+    grid-area: inner-div;
+    z-index:1
+}
+
+.upgrade-modal-container-header {
+    color: hsla(0, 0%, 100%, .9);
+    display: flex;
+    font-size:1.4em
+}
+
+.upgrade-modal-container-contents {
+    gap: 32px;
+    grid-area: inner-div;
+    padding: 32px;
+    z-index:2
+}
+
+.upgrade-modal-container-body, .upgrade-modal-container-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between
+}
+
+.upgrade-modal-container-body {
+    font-size: 1.2em;
+    gap: 16px;
+    height: 100%;
+    line-height:1.5em
+}
+
+.upgrade-body {
+    color: hsla(0, 0%, 100%, .9);
+    display: flex;
+    flex-direction: column;
+    gap:4px
+}
+
+.upgrade-toggle-button-container-in-modal {
+    padding:4px
+}
+
+.upgrade-toggle-button-container, .upgrade-toggle-button-container-in-modal {
+    background: linear-gradient(0deg, hsla(0, 0%, 100%, .15), hsla(0, 0%, 100%, .15)), #000;
+    border-radius: 4px;
+    display: flex;
+    gap:8px
+}
+
+.upgrade-toggle-button-container {
+    margin: auto auto 50px;
+    padding: 8px;
+    width:30%
+}
+
+.upgrade-body-row {
+    align-items: center;
+    display: flex;
+    justify-content:space-between
+}
+
+.upgrade-body-text--left {
+    margin: 0;
+    text-align:left
+}
+
+.upgrade-body-text--right {
+    margin: 0;
+    text-align:right
+}
+
+.upgrade-body-text--badge {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    height: 20px;
+    margin: 0;
+    text-align:right
+}
+
+.upgrade-discount-badge {
+    background: #b4fa72;
+    border-radius: 2px;
+    color: #1e1e1d;
+    font-size: .8em;
+    font-weight: 400;
+    padding:1px 4px
+}
+
+.upgrade-hr {
+    background-color: hsla(0, 0%, 100%, .15);
+    border: 0;
+    height: 1px;
+    width:100%
+}
+
+.plan-badge {
+    align-items: center;
+    border-radius: 4px;
+    display: flex;
+    font-size: 1.5em;
+    font-weight: 400;
+    justify-content: center;
+    width:fit-content
+}
+
+.secondarytext {
+    color:hsla(0, 0%, 100%, .6)
+}
+
+.highlighttext {
+    color: hsla(0, 0%, 100%, .9);
+    font-weight:700
+}
+
+.checkout-section {
+    display: flex;
+    flex-direction: column;
+    gap:16px
+}
+
+.overlay {
+    background: rgba(0, 0, 0, .6);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:100
+}
+
+.overlay-modal {
+    background: #1e1e1e;
+    border: 1px solid hsla(0, 0%, 100%, .15);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    gap: 16px;
+    left: 50%;
+    padding: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width:340px
+}
+
+.overlay-modal-header {
+    color: hsla(0, 0%, 100%, .9);
+    display: flex;
+    font-family: Roboto;
+    font-size: 20px;
+    gap: 16px;
+    line-height:23px
+}
+
+.overlay-modal-body {
+    color: hsla(0, 0%, 100%, .6);
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height:16px
+}
+
+.overlay-modal-input {
+    background: #000;
+    border: 1px solid hsla(0, 0%, 100%, .25);
+    border-radius: 4px;
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    padding: 10px 16px;
+    resize: none
+}
+/*# sourceMappingURL=main.css.map*/
