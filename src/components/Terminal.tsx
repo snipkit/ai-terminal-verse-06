@@ -3,6 +3,8 @@ import React from 'react';
 import { TerminalHeader } from './TerminalHeader';
 import { TerminalMessages } from './TerminalMessages';
 import { TerminalInputArea } from './TerminalInputArea';
+import { TerminalContainer } from './TerminalContainer';
+import { TerminalBody } from './TerminalBody';
 import { useTerminalLogic } from '@/hooks/useTerminalLogic';
 
 export const Terminal = () => {
@@ -25,7 +27,7 @@ export const Terminal = () => {
   } = useTerminalLogic();
 
   return (
-    <div className="w-full max-w-6xl mx-auto mt-4">
+    <TerminalContainer>
       <TerminalHeader
         selectedModel={selectedModel}
         onModelChange={setSelectedModel}
@@ -39,7 +41,7 @@ export const Terminal = () => {
         dataTransmissionVisible={dataTransmissionVisible}
       />
       
-      <div className="bg-black border border-zinc-800 border-t-0 rounded-b-xl">
+      <TerminalBody>
         <TerminalMessages
           messages={messages}
           corrections={corrections}
@@ -49,7 +51,7 @@ export const Terminal = () => {
         />
         
         <TerminalInputArea onSubmit={handleCommand} />
-      </div>
-    </div>
+      </TerminalBody>
+    </TerminalContainer>
   );
 };
