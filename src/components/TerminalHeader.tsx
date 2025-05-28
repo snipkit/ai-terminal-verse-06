@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Zap, Settings, Info } from 'lucide-react';
+import { Zap, Settings, Info, Book, Workflow, Sparkles } from 'lucide-react';
 import { EnhancedAgentMode } from './EnhancedAgentMode';
 import { CapabilityIndicators } from './CapabilityIndicators';
 
@@ -23,6 +23,12 @@ interface TerminalHeaderProps {
   onAgentStop: () => void;
   onClearMessages: () => void;
   dataTransmissionVisible: boolean;
+  onToggleRunbooks: () => void;
+  onToggleWorkflows: () => void;
+  onToggleCommandGenerator: () => void;
+  runbooksVisible: boolean;
+  workflowsVisible: boolean;
+  commandGeneratorVisible: boolean;
 }
 
 export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
@@ -35,7 +41,13 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
   onAgentResume,
   onAgentStop,
   onClearMessages,
-  dataTransmissionVisible
+  dataTransmissionVisible,
+  onToggleRunbooks,
+  onToggleWorkflows,
+  onToggleCommandGenerator,
+  runbooksVisible,
+  workflowsVisible,
+  commandGeneratorVisible
 }) => {
   const [showCapabilities, setShowCapabilities] = useState(false);
 
@@ -66,6 +78,34 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
         </div>
         
         <div className="flex items-center gap-3">
+          {/* Workflow Controls */}
+          <div className="flex items-center gap-1">
+            <Button 
+              variant={commandGeneratorVisible ? "default" : "ghost"} 
+              size="sm" 
+              onClick={onToggleCommandGenerator}
+              className="h-8 px-2 text-xs"
+            >
+              <Sparkles className="w-4 h-4" />
+            </Button>
+            <Button 
+              variant={runbooksVisible ? "default" : "ghost"} 
+              size="sm" 
+              onClick={onToggleRunbooks}
+              className="h-8 px-2 text-xs"
+            >
+              <Book className="w-4 h-4" />
+            </Button>
+            <Button 
+              variant={workflowsVisible ? "default" : "ghost"} 
+              size="sm" 
+              onClick={onToggleWorkflows}
+              className="h-8 px-2 text-xs"
+            >
+              <Workflow className="w-4 h-4" />
+            </Button>
+          </div>
+          
           <EnhancedAgentMode 
             isEnabled={agentMode} 
             onToggle={onAgentModeToggle}
