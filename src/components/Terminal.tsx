@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Terminal as TerminalIcon, Zap, Settings, Plus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -15,6 +14,8 @@ import { TerminalInput } from './TerminalInput';
 import { TerminalResponse } from './TerminalResponse';
 import { AgentMode } from './AgentMode';
 import { AgentResponse } from './AgentResponse';
+import { EnhancedAgentMode } from './EnhancedAgentMode';
+import { SelfCorrectionTracker } from './SelfCorrectionTracker';
 
 type AgentStep = {
   id: string;
@@ -32,10 +33,21 @@ type Message = {
   steps?: AgentStep[];
 };
 
+type CorrectionAttempt = {
+  id: string;
+  originalError: string;
+  correctionStrategy: string;
+  status: 'attempting' | 'success' | 'failed';
+  timestamp: Date;
+};
+
 export const Terminal = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [selectedModel, setSelectedModel] = useState('gpt-4o');
   const [agentMode, setAgentMode] = useState(false);
+  const [agentRunning, setAgentRunning] = useState(false);
+  const [corrections, setCorrections] = useState<CorrectionAttempt[]>([]);
+  const [dataTransmissionVisible, setDataTransmissionVisible] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,6 +55,40 @@ export const Terminal = () => {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
+
+  const simulateNaturalLanguageDetection = (command: string): boolean => {
+    // Simple detection for demo - in real app this would be more sophisticated
+    const naturalLanguagePatterns = [
+      /^(create|make|build|generate)/i,
+      /^(show|display|list)/i,
+      /^(find|search|look for)/i,
+      /^(help|how do|can you)/i
+    ];
+    
+    return naturalLanguagePatterns.some(pattern => pattern.test(command));
+  };
+
+  const simulateSelfCorrection = (error: string) => {
+    const correctionId = Date.now().toString();
+    const correction: CorrectionAttempt = {
+      id: correctionId,
+      originalError: error,
+      correctionStrategy: 'Analyzing command syntax and retrying with corrected parameters',
+      status: 'attempting',
+      timestamp: new Date()
+    };
+
+    setCorrections(prev => [...prev, correction]);
+
+    // Simulate correction process
+    setTimeout(() => {
+      setCorrections(prev => prev.map(c => 
+        c.id === correctionId 
+          ? { ...c, status: Math.random() > 0.3 ? 'success' : 'failed' as const }
+          : c
+      ));
+    }, 2000);
+  };
 
   const simulateAgentResponse = (command: string): AgentStep[] => {
     // Simulate agent breaking down tasks into steps
@@ -71,13 +117,25 @@ export const Terminal = () => {
   const handleCommand = async (command: string) => {
     if (!command.trim()) return;
 
+    // Show data transmission indicator
+    setDataTransmissionVisible(true);
+    setTimeout(() => setDataTransmissionVisible(false), 1000);
+
+    // Natural language detection
+    const isNaturalLanguage = simulateNaturalLanguageDetection(command);
+    
     // Add user input to messages
     setMessages(prev => [...prev, {
       type: 'input',
-      content: command,
+      content: `${isNaturalLanguage ? '🧠 ' : ''}${command}`,
       model: selectedModel,
       timestamp: new Date()
     }]);
+
+    // Simulate potential error and self-correction
+    if (command.toLowerCase().includes('error') && Math.random() > 0.5) {
+      simulateSelfCorrection('Command execution failed: Invalid syntax');
+    }
 
     // Simulate AI response
     setTimeout(() => {
@@ -137,6 +195,22 @@ export const Terminal = () => {
     }));
   };
 
+  const handleAgentPause = () => {
+    setAgentRunning(false);
+    console.log('Agent Mode paused');
+  };
+
+  const handleAgentResume = () => {
+    setAgentRunning(true);
+    console.log('Agent Mode resumed');
+  };
+
+  const handleAgentStop = () => {
+    setAgentRunning(false);
+    setAgentMode(false);
+    console.log('Agent Mode stopped');
+  };
+
   const clearMessages = () => {
     setMessages([]);
   };
@@ -155,11 +229,24 @@ export const Terminal = () => {
             <div className="flex items-center gap-2 ml-4">
               <Zap className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-zinc-200">AI Terminal</span>
+              {dataTransmissionVisible && (
+                <div className="flex items-center gap-1 text-xs text-green-400">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  Transmitting...
+                </div>
+              )}
             </div>
           </div>
           
           <div className="flex items-center gap-3">
-            <AgentMode isEnabled={agentMode} onToggle={setAgentMode} />
+            <EnhancedAgentMode 
+              isEnabled={agentMode} 
+              onToggle={setAgentMode}
+              isRunning={agentRunning}
+              onPause={handleAgentPause}
+              onResume={handleAgentResume}
+              onStop={handleAgentStop}
+            />
             <Select value={selectedModel} onValueChange={setSelectedModel}>
               <SelectTrigger className="w-[140px] h-8 text-xs bg-zinc-800 border-zinc-700">
                 <SelectValue />
@@ -185,9 +272,14 @@ export const Terminal = () => {
       <div className="bg-black border border-zinc-800 border-t-0 rounded-b-xl">
         <ScrollArea className="h-[600px] p-6" ref={scrollRef}>
           <div className="space-y-4">
+            <SelfCorrectionTracker 
+              corrections={corrections} 
+              isActive={agentMode && corrections.some(c => c.status === 'attempting')} 
+            />
+            
             {messages.length === 0 && (
               <div className="text-zinc-500 text-sm font-mono">
-                Welcome to AI Terminal. {agentMode ? 'Agent Mode is enabled - AI can execute multi-step tasks.' : 'Type a command to get started.'}
+                Welcome to AI Terminal. {agentMode ? 'Enhanced Agent Mode is enabled with natural language detection and self-correction.' : 'Type a command to get started.'}
               </div>
             )}
             {messages.map((message, index) => {
