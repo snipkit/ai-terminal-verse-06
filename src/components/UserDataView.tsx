@@ -1,25 +1,24 @@
-
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useMutation, useLazyQuery } from '@apollo/client';
 import { User } from './AuthenticatedView';
 import ModalContainer, {
   ModalContainerIconType,
-} from './modal-container/ModalContainer';
-import ModalContainerHeader from './modal-container/ModalContainerHeader';
-import ModalContainerBody from './modal-container/ModalContainerBody';
+} from '../../static/js/modal-container/ModalContainer';
+import ModalContainerHeader from '../../static/js/modal-container/ModalContainerHeader';
+import ModalContainerBody from '../../static/js/modal-container/ModalContainerBody';
 import './user-data.css';
 import ModalContainerButton, {
   ModalContainerButtonAccent,
   ModalContainerButtonTreatment,
   ModalContainerButtonType,
-} from './modal-container/ModalContainerButton';
+} from '../../static/js/modal-container/ModalContainerButton';
 import GetUserForUserDataView, {
   UserForUserDataView,
 } from './graphql/queries/GetUserForUserDataView';
 import TransferTeamOwnershipMutation from './graphql/mutations/TransferTeamOwnership';
 import DeleteUser from './graphql/mutations/DeleteUser';
-import ModalContainerButtonSpacer from './modal-container/ModalContainerButtonSpacer';
+import ModalContainerButtonSpacer from '../../static/js/modal-container/ModalContainerButtonSpacer';
 
 export interface UserDataProps {
   user: User;

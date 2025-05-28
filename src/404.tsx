@@ -2,9 +2,9 @@
 import React from 'react';
 import ModalContainer, {
   ModalContainerIconType,
-} from './components/modal-container/ModalContainer';
-import ModalContainerHeader from './components/modal-container/ModalContainerHeader';
-import ModalContainerBody from './components/modal-container/ModalContainerBody';
+} from '../static/js/modal-container/ModalContainer';
+import ModalContainerHeader from '../static/js/modal-container/ModalContainerHeader';
+import ModalContainerBody from '../static/js/modal-container/ModalContainerBody';
 
 const Warp404 = () => {
   return (
