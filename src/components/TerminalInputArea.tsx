@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TerminalInput } from './TerminalInput';
+import { InlineEditableInput } from './InlineEditableInput';
 
 interface TerminalInputAreaProps {
   onSubmit: (command: string) => void;
@@ -9,7 +9,15 @@ interface TerminalInputAreaProps {
 export const TerminalInputArea: React.FC<TerminalInputAreaProps> = ({ onSubmit }) => {
   return (
     <div className="border-t border-zinc-800 p-4">
-      <TerminalInput onSubmit={onSubmit} />
+      <InlineEditableInput 
+        onSubmit={onSubmit}
+        capabilities={{
+          aiSuggestions: true,
+          syntaxHighlighting: true,
+          autoComplete: true,
+          multiLine: false
+        }}
+      />
     </div>
   );
 };

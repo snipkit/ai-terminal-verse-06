@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -8,8 +8,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Zap, Settings } from 'lucide-react';
+import { Zap, Settings, Info } from 'lucide-react';
 import { EnhancedAgentMode } from './EnhancedAgentMode';
+import { CapabilityIndicators } from './CapabilityIndicators';
 
 interface TerminalHeaderProps {
   selectedModel: string;
@@ -36,6 +37,8 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
   onClearMessages,
   dataTransmissionVisible
 }) => {
+  const [showCapabilities, setShowCapabilities] = useState(false);
+
   return (
     <div className="bg-zinc-900 rounded-t-xl border border-zinc-800 border-b-0">
       <div className="flex items-center justify-between px-4 py-3">
@@ -54,6 +57,11 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
                 Transmitting...
               </div>
             )}
+          </div>
+          
+          {/* Compact capability indicators */}
+          <div className="hidden lg:block">
+            <CapabilityIndicators compact />
           </div>
         </div>
         
@@ -77,6 +85,14 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
               <SelectItem value="llama-3">Llama 3</SelectItem>
             </SelectContent>
           </Select>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={() => setShowCapabilities(!showCapabilities)}
+            className="h-8 px-2 text-xs lg:hidden"
+          >
+            <Info className="w-4 h-4" />
+          </Button>
           <Button variant="ghost" size="sm" onClick={onClearMessages} className="h-8 px-2 text-xs">
             Clear
           </Button>
@@ -85,6 +101,13 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
           </Button>
         </div>
       </div>
+      
+      {/* Mobile capability indicators */}
+      {showCapabilities && (
+        <div className="px-4 pb-3 lg:hidden">
+          <CapabilityIndicators />
+        </div>
+      )}
     </div>
   );
 };
