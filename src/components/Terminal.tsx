@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { TerminalHeader } from './TerminalHeader';
 import { TerminalMessages } from './TerminalMessages';
@@ -8,6 +7,8 @@ import { TerminalBody } from './TerminalBody';
 import { WorkflowEngine, type Workflow } from './WorkflowEngine';
 import { RunbookLibrary } from './RunbookLibrary';
 import { CommandGenerator } from './CommandGenerator';
+import { CommandBlockConfirmation } from './CommandBlockConfirmation';
+import { PluginManager } from './PluginManager';
 import { useTerminalLogic } from '@/hooks/useTerminalLogic';
 
 export const Terminal = () => {
@@ -26,7 +27,15 @@ export const Terminal = () => {
     handleAgentPause,
     handleAgentResume,
     handleAgentStop,
-    clearMessages
+    clearMessages,
+    enabledPlugins,
+    commandBlocks,
+    pluginManagerVisible,
+    setPluginManagerVisible,
+    handleCommandBlockConfirm,
+    handleCommandBlockReject,
+    handleCommandBlockExecute,
+    handleTogglePlugin
   } = useTerminalLogic();
 
   // New state for workflow features
@@ -52,18 +61,15 @@ export const Terminal = () => {
       updatedWorkflow.currentStepIndex = stepIndex;
       setCurrentWorkflow(updatedWorkflow);
       
-      // Execute the command if it exists
       if (updatedWorkflow.steps[stepIndex].command) {
         handleCommand(updatedWorkflow.steps[stepIndex].command!);
       }
       
-      // Simulate step completion
       setTimeout(() => {
         const completedWorkflow = { ...updatedWorkflow };
         completedWorkflow.steps[stepIndex].status = 'completed';
         completedWorkflow.steps[stepIndex].output = '✓ Step completed successfully';
         
-        // Move to next step
         if (stepIndex < completedWorkflow.steps.length - 1) {
           completedWorkflow.currentStepIndex = stepIndex + 1;
         } else {
@@ -92,6 +98,14 @@ export const Terminal = () => {
     setWorkflowsVisible(false);
   };
 
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
   return (
     <TerminalContainer>
       <TerminalHeader
@@ -108,14 +122,22 @@ export const Terminal = () => {
         onToggleRunbooks={() => setRunbooksVisible(!runbooksVisible)}
         onToggleWorkflows={() => setWorkflowsVisible(!workflowsVisible)}
         onToggleCommandGenerator={() => setCommandGeneratorVisible(!commandGeneratorVisible)}
+        onTogglePluginManager={() => setPluginManagerVisible(!pluginManagerVisible)}
         runbooksVisible={runbooksVisible}
         workflowsVisible={workflowsVisible}
         commandGeneratorVisible={commandGeneratorVisible}
+        pluginManagerVisible={pluginManagerVisible}
       />
       
       <TerminalBody>
-        {/* Workflow and Runbook panels */}
+        {/* Plugin and workflow panels */}
         <div className="space-y-4 p-4">
+          <PluginManager
+            enabledPlugins={enabledPlugins}
+            onTogglePlugin={handleTogglePlugin}
+            isVisible={pluginManagerVisible}
+          />
+          
           <CommandGenerator 
             onExecuteCommand={handleCommand}
             isVisible={commandGeneratorVisible}
@@ -135,6 +157,23 @@ export const Terminal = () => {
               onStopWorkflow={handleWorkflowStop}
               isVisible={workflowsVisible}
             />
+          )}
+          
+          {/* Command blocks generated in Agent Mode */}
+          {commandBlocks.length > 0 && (
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-zinc-300">Generated Command Blocks</h4>
+              {commandBlocks.slice(0, 5).map((block) => (
+                <CommandBlockConfirmation
+                  key={block.id}
+                  commandBlock={block}
+                  onConfirm={handleCommandBlockConfirm}
+                  onReject={handleCommandBlockReject}
+                  onExecute={handleCommandBlockExecute}
+                  onCopy={copyToClipboard}
+                />
+              ))}
+            </div>
           )}
         </div>
         

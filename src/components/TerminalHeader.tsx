@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -8,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Zap, Settings, Info, Book, Workflow, Sparkles } from 'lucide-react';
+import { Zap, Settings, Info, Book, Workflow, Sparkles, Puzzle } from 'lucide-react';
 import { EnhancedAgentMode } from './EnhancedAgentMode';
 import { CapabilityIndicators } from './CapabilityIndicators';
 
@@ -26,9 +25,11 @@ interface TerminalHeaderProps {
   onToggleRunbooks: () => void;
   onToggleWorkflows: () => void;
   onToggleCommandGenerator: () => void;
+  onTogglePluginManager: () => void;
   runbooksVisible: boolean;
   workflowsVisible: boolean;
   commandGeneratorVisible: boolean;
+  pluginManagerVisible: boolean;
 }
 
 export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
@@ -45,9 +46,11 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
   onToggleRunbooks,
   onToggleWorkflows,
   onToggleCommandGenerator,
+  onTogglePluginManager,
   runbooksVisible,
   workflowsVisible,
-  commandGeneratorVisible
+  commandGeneratorVisible,
+  pluginManagerVisible
 }) => {
   const [showCapabilities, setShowCapabilities] = useState(false);
 
@@ -71,20 +74,28 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
             )}
           </div>
           
-          {/* Compact capability indicators */}
           <div className="hidden lg:block">
             <CapabilityIndicators compact />
           </div>
         </div>
         
         <div className="flex items-center gap-3">
-          {/* Workflow Controls */}
           <div className="flex items-center gap-1">
+            <Button 
+              variant={pluginManagerVisible ? "default" : "ghost"} 
+              size="sm" 
+              onClick={onTogglePluginManager}
+              className="h-8 px-2 text-xs"
+              title="Plugin Manager"
+            >
+              <Puzzle className="w-4 h-4" />
+            </Button>
             <Button 
               variant={commandGeneratorVisible ? "default" : "ghost"} 
               size="sm" 
               onClick={onToggleCommandGenerator}
               className="h-8 px-2 text-xs"
+              title="Command Generator"
             >
               <Sparkles className="w-4 h-4" />
             </Button>
@@ -93,6 +104,7 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
               size="sm" 
               onClick={onToggleRunbooks}
               className="h-8 px-2 text-xs"
+              title="Runbook Library"
             >
               <Book className="w-4 h-4" />
             </Button>
@@ -101,6 +113,7 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
               size="sm" 
               onClick={onToggleWorkflows}
               className="h-8 px-2 text-xs"
+              title="Workflow Engine"
             >
               <Workflow className="w-4 h-4" />
             </Button>
