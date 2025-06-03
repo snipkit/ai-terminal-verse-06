@@ -77,6 +77,33 @@ export const Terminal = () => {
   const [recentCommands, setRecentCommands] = useState<string[]>([]);
   const [lastError, setLastError] = useState<string>('');
 
+  // Workflow handler functions
+  const handleWorkflowExecuteStep = (stepId: string) => {
+    console.log('Executing workflow step:', stepId);
+    // Implementation for workflow step execution
+  };
+
+  const handleWorkflowPause = () => {
+    console.log('Pausing workflow');
+    if (currentWorkflow) {
+      setCurrentWorkflow({ ...currentWorkflow, status: 'paused' });
+    }
+  };
+
+  const handleWorkflowResume = () => {
+    console.log('Resuming workflow');
+    if (currentWorkflow) {
+      setCurrentWorkflow({ ...currentWorkflow, status: 'running' });
+    }
+  };
+
+  const handleWorkflowStop = () => {
+    console.log('Stopping workflow');
+    if (currentWorkflow) {
+      setCurrentWorkflow({ ...currentWorkflow, status: 'failed' });
+    }
+  };
+
   // Keyboard shortcut for command palette
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
