@@ -13,6 +13,21 @@ import { useTerminalLogic } from '@/hooks/useTerminalLogic';
 import { CommandPalette, CommandPaletteAction } from './CommandPalette';
 import { FileBrowser } from './FileBrowser';
 import { CodeViewer } from './CodeViewer';
+import { SmartSuggestions } from './SmartSuggestions';
+import { ProjectProfiles } from './ProjectProfiles';
+import { EnhancedHistory } from './EnhancedHistory';
+
+interface ProjectProfile {
+  id: string;
+  name: string;
+  description: string;
+  enabledPlugins: string[];
+  theme: string;
+  aliases: Record<string, string>;
+  envVars: Record<string, string>;
+  isFavorite: boolean;
+  lastUsed: Date;
+}
 
 export const Terminal = () => {
   const {
@@ -48,12 +63,19 @@ export const Terminal = () => {
     setMessages
   } = useTerminalLogic();
 
-  // New state for workflow features
+  // New state for enhanced features
   const [runbooksVisible, setRunbooksVisible] = useState(false);
   const [workflowsVisible, setWorkflowsVisible] = useState(false);
   const [commandGeneratorVisible, setCommandGeneratorVisible] = useState(false);
   const [currentWorkflow, setCurrentWorkflow] = useState<Workflow | null>(null);
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [profilesVisible, setProfilesVisible] = useState(false);
+  const [historyVisible, setHistoryVisible] = useState(false);
+  const [smartSuggestionsVisible, setSmartSuggestionsVisible] = useState(true);
+  const [currentProfile, setCurrentProfile] = useState<ProjectProfile | null>(null);
+  const [currentInput, setCurrentInput] = useState('');
+  const [recentCommands, setRecentCommands] = useState<string[]>([]);
+  const [lastError, setLastError] = useState<string>('');
 
   // Keyboard shortcut for command palette
   React.useEffect(() => {
@@ -83,6 +105,16 @@ export const Terminal = () => {
       if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key.toLowerCase() === 'p') {
         e.preventDefault();
         setPluginManagerVisible((prev) => !prev);
+      }
+      // Open History: Cmd/Ctrl+H
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'h') {
+        e.preventDefault();
+        setHistoryVisible(true);
+      }
+      // Open Profiles: Cmd/Ctrl+Shift+O
+      if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key.toLowerCase() === 'o') {
+        e.preventDefault();
+        setProfilesVisible(true);
       }
     };
     window.addEventListener('keydown', handler);
@@ -115,6 +147,14 @@ export const Terminal = () => {
       onSelect: () => setWorkflowsVisible(!workflowsVisible),
     },
     {
+      label: 'Open Project Profiles',
+      onSelect: () => setProfilesVisible(true),
+    },
+    {
+      label: 'Open Command History',
+      onSelect: () => setHistoryVisible(true),
+    },
+    {
       label: 'Clear Messages',
       onSelect: clearMessages,
     },
@@ -126,52 +166,23 @@ export const Terminal = () => {
     setRunbooksVisible(false);
   };
 
-  const handleWorkflowExecuteStep = (stepId: string) => {
-    if (!currentWorkflow) return;
-    
-    const updatedWorkflow = { ...currentWorkflow };
-    const stepIndex = updatedWorkflow.steps.findIndex(step => step.id === stepId);
-    
-    if (stepIndex !== -1) {
-      updatedWorkflow.steps[stepIndex].status = 'running';
-      updatedWorkflow.currentStepIndex = stepIndex;
-      setCurrentWorkflow(updatedWorkflow);
-      
-      if (updatedWorkflow.steps[stepIndex].command) {
-        handleCommand(updatedWorkflow.steps[stepIndex].command!);
-      }
-      
-      setTimeout(() => {
-        const completedWorkflow = { ...updatedWorkflow };
-        completedWorkflow.steps[stepIndex].status = 'completed';
-        completedWorkflow.steps[stepIndex].output = '✓ Step completed successfully';
-        
-        if (stepIndex < completedWorkflow.steps.length - 1) {
-          completedWorkflow.currentStepIndex = stepIndex + 1;
-        } else {
-          completedWorkflow.status = 'completed';
-        }
-        
-        setCurrentWorkflow(completedWorkflow);
-      }, 2000);
-    }
+  const handleSelectProfile = (profile: ProjectProfile) => {
+    setCurrentProfile(profile);
+    // Apply profile settings
+    profile.enabledPlugins.forEach(pluginId => {
+      handleTogglePlugin(pluginId, true);
+    });
+    // You could also apply theme, aliases, etc. here
   };
 
-  const handleWorkflowPause = () => {
-    if (currentWorkflow) {
-      setCurrentWorkflow({ ...currentWorkflow, status: 'paused' });
-    }
+  const handleEnhancedCommand = (command: string) => {
+    setRecentCommands(prev => [command, ...prev.slice(0, 9)]); // Keep last 10 commands
+    setCurrentInput('');
+    handleCommand(command);
   };
 
-  const handleWorkflowResume = () => {
-    if (currentWorkflow) {
-      setCurrentWorkflow({ ...currentWorkflow, status: 'running' });
-    }
-  };
-
-  const handleWorkflowStop = () => {
-    setCurrentWorkflow(null);
-    setWorkflowsVisible(false);
+  const handleSuggestionSelect = (command: string) => {
+    setCurrentInput(command);
   };
 
   const copyToClipboard = async (text: string) => {
@@ -185,6 +196,18 @@ export const Terminal = () => {
   return (
     <>
       <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} actions={paletteActions} />
+      <ProjectProfiles
+        isVisible={profilesVisible}
+        onClose={() => setProfilesVisible(false)}
+        onSelectProfile={handleSelectProfile}
+        currentProfile={currentProfile}
+      />
+      <EnhancedHistory
+        isVisible={historyVisible}
+        onClose={() => setHistoryVisible(false)}
+        onExecuteCommand={handleEnhancedCommand}
+      />
+      
       <TerminalContainer>
         <TerminalHeader
           selectedModel={selectedModel}
@@ -218,7 +241,6 @@ export const Terminal = () => {
           {/* Render file browser or messages based on isFileBrowsing state */}
           {isFileBrowsing ? (
             selectedFile ? (
-              // Render CodeViewer component when selectedFile is not null
               <CodeViewer filePath={selectedFile} setSelectedFile={setSelectedFile} />
             ) : (
               <FileBrowser
@@ -299,7 +321,16 @@ export const Terminal = () => {
           )}
         </TerminalBody>
         
-        <TerminalInputArea onSubmit={handleCommand} />
+        <div className="relative">
+          <SmartSuggestions
+            currentInput={currentInput}
+            recentCommands={recentCommands}
+            lastError={lastError}
+            onSelectSuggestion={handleSuggestionSelect}
+            isVisible={smartSuggestionsVisible && currentInput.length > 2}
+          />
+          <TerminalInputArea onSubmit={handleEnhancedCommand} />
+        </div>
       </TerminalContainer>
     </>
   );
