@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import { Bot } from 'lucide-react';
+import { Bot, CheckCircle } from 'lucide-react';
+import { getSyntaxHighlightedText } from './utils/syntaxHighlight';
 
 interface TerminalResponseProps {
   response: string;
@@ -20,10 +20,11 @@ export const TerminalResponse: React.FC<TerminalResponseProps> = ({
         <div className="w-4 h-4 bg-primary rounded-sm flex items-center justify-center">
           <Bot className="w-2.5 h-2.5 text-black" />
         </div>
+        <CheckCircle className="w-3.5 h-3.5 text-green-400" />
       </div>
       <div className="flex-1">
         <Card className="p-4 bg-zinc-900 border-zinc-800 rounded-lg">
-          <pre className="font-mono whitespace-pre-wrap text-sm text-zinc-100 leading-relaxed">{response}</pre>
+          <pre className="font-mono whitespace-pre-wrap text-sm text-zinc-100 leading-relaxed">{getSyntaxHighlightedText(response)}</pre>
           <div className="flex items-center justify-between text-xs text-zinc-500 mt-3 pt-2 border-t border-zinc-800">
             <span className="font-mono">{model}</span>
             <span className="font-mono">{timestamp.toLocaleTimeString()}</span>

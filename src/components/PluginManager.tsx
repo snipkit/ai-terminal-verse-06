@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -26,8 +25,18 @@ export const PluginManager: React.FC<PluginManagerProps> = ({
   isVisible
 }) => {
   const [expandedPlugins, setExpandedPlugins] = useState<Set<string>>(new Set());
+  const [search, setSearch] = useState('');
 
   if (!isVisible) return null;
+
+  const filteredPlugins = builtInPlugins.filter((plugin) => {
+    const q = search.toLowerCase();
+    return (
+      plugin.name.toLowerCase().includes(q) ||
+      plugin.description.toLowerCase().includes(q) ||
+      plugin.category.toLowerCase().includes(q)
+    );
+  });
 
   const toggleExpanded = (pluginId: string) => {
     const newExpanded = new Set(expandedPlugins);
@@ -59,7 +68,7 @@ export const PluginManager: React.FC<PluginManagerProps> = ({
   };
 
   return (
-    <Card className="p-4 bg-zinc-900 border-zinc-800">
+    <Card className="p-4 bg-zinc-900 border-zinc-800" role="region" aria-label="Plugin Manager">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -71,8 +80,16 @@ export const PluginManager: React.FC<PluginManagerProps> = ({
           </Button>
         </div>
 
+        <input
+          type="text"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          placeholder="Search plugins..."
+          className="w-full mb-2 p-2 rounded bg-zinc-800 text-zinc-100 border border-zinc-700 text-xs font-mono focus:outline-none"
+        />
+
         <div className="space-y-2">
-          {builtInPlugins.map((plugin) => {
+          {filteredPlugins.map((plugin) => {
             const isEnabled = enabledPlugins.includes(plugin.id);
             const isExpanded = expandedPlugins.has(plugin.id);
 
@@ -93,7 +110,15 @@ export const PluginManager: React.FC<PluginManagerProps> = ({
                           <ChevronRight className="w-4 h-4" />
                         )}
                       </Button>
-                      <span className="text-sm font-medium text-zinc-200">{plugin.name}</span>
+                      <span className="text-sm font-medium text-zinc-200 flex items-center gap-1">
+                        <span
+                          className={`w-2 h-2 rounded-full ${isEnabled ? 'bg-green-400' : 'bg-zinc-500'}`}
+                          aria-label={isEnabled ? 'Enabled' : 'Disabled'}
+                          aria-checked={isEnabled}
+                          role="status"
+                        ></span>
+                        {plugin.name}
+                      </span>
                       <Badge variant="outline" className={`text-xs ${getCategoryColor(plugin.category)}`}>
                         {plugin.category}
                       </Badge>
@@ -102,6 +127,8 @@ export const PluginManager: React.FC<PluginManagerProps> = ({
                       checked={isEnabled}
                       onCheckedChange={(checked) => onTogglePlugin(plugin.id, checked)}
                       className="scale-75"
+                      aria-checked={isEnabled}
+                      aria-label={isEnabled ? `Disable ${plugin.name}` : `Enable ${plugin.name}`}
                     />
                   </div>
 

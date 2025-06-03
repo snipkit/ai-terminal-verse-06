@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -88,7 +87,7 @@ export const WorkflowEngine: React.FC<WorkflowEngineProps> = ({
   const progress = (completedSteps / workflow.steps.length) * 100;
 
   return (
-    <Card className="p-4 bg-zinc-900 border-zinc-800 border-l-4 border-l-blue-400">
+    <Card className="p-4 bg-zinc-900 border-zinc-800 border-l-4 border-l-blue-400" role="region" aria-label="Workflow Engine">
       <div className="space-y-4">
         {/* Workflow Header */}
         <div className="flex items-center justify-between">
@@ -134,40 +133,56 @@ export const WorkflowEngine: React.FC<WorkflowEngineProps> = ({
           {workflow.steps.map((step, index) => (
             <div
               key={step.id}
-              className={`flex items-start gap-3 p-3 rounded-lg border ${
-                index === workflow.currentStepIndex 
-                  ? 'bg-zinc-800 border-blue-500/30' 
-                  : 'bg-zinc-800/50 border-zinc-700'
-              }`}
+              className={`flex items-start gap-3 p-3 rounded-lg border relative transition-colors duration-300
+                ${index === workflow.currentStepIndex ? 'bg-zinc-800 border-blue-500/30 animate-fade-in' : 'bg-zinc-800/50 border-zinc-700'}
+              `}
             >
-              <div className="flex items-center gap-2 mt-0.5">
+              <div className="flex flex-col items-center gap-2 mt-0.5">
                 {getStepIcon(step)}
+                <span
+                  className={`w-2 h-2 rounded-full block mt-1 ${
+                    step.status === 'completed' ? 'bg-green-400' :
+                    step.status === 'running' ? 'bg-yellow-400 animate-pulse' :
+                    step.status === 'failed' ? 'bg-red-400' :
+                    'bg-zinc-500'
+                  }`}
+                  aria-label={
+                    step.status === 'completed' ? 'Completed' :
+                    step.status === 'running' ? 'Running' :
+                    step.status === 'failed' ? 'Failed' :
+                    'Pending'
+                  }
+                  aria-checked={step.status === 'completed'}
+                  role="status"
+                ></span>
                 <span className="text-xs text-zinc-500">{index + 1}</span>
               </div>
-              
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <h4 className="text-xs font-medium text-zinc-200 truncate">{step.title}</h4>
-                  <Badge variant="outline" className={`text-xs ${getStepTypeColor(step.type)}`}>
-                    {step.type}
-                  </Badge>
+                  <Badge variant="outline" className={`text-xs ${getStepTypeColor(step.type)}`}>{step.type}</Badge>
+                  <span className={`text-xs font-semibold ml-2 ${
+                    step.status === 'completed' ? 'text-green-400' :
+                    step.status === 'running' ? 'text-yellow-400' :
+                    step.status === 'failed' ? 'text-red-400' :
+                    'text-zinc-400'
+                  }`}>
+                    {step.status.charAt(0).toUpperCase() + step.status.slice(1)}
+                  </span>
                 </div>
                 <p className="text-xs text-zinc-400 mb-2">{step.description}</p>
-                
                 {step.command && (
                   <div className="text-xs font-mono bg-black p-2 rounded border border-zinc-700 mb-2">
                     <span className="text-green-400">$ </span>
                     <span className="text-zinc-300">{step.command}</span>
                   </div>
                 )}
-                
                 {step.output && (
                   <div className="text-xs text-zinc-500 bg-zinc-900 p-2 rounded border border-zinc-700">
                     {step.output}
                   </div>
                 )}
               </div>
-              
               {step.status === 'pending' && index === workflow.currentStepIndex && (
                 <Button
                   size="sm"

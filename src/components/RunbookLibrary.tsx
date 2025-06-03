@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -194,7 +193,7 @@ export const RunbookLibrary: React.FC<RunbookLibraryProps> = ({
   const categories = [...new Set(mockRunbooks.map(r => r.category))];
 
   return (
-    <Card className="p-4 bg-zinc-900 border-zinc-800">
+    <Card className="p-4 bg-zinc-900 border-zinc-800" role="region" aria-label="Runbook Library">
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Book className="w-5 h-5 text-primary" />
@@ -248,7 +247,23 @@ export const RunbookLibrary: React.FC<RunbookLibraryProps> = ({
                 {getCategoryIcon(runbook.category)}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="text-xs font-medium text-zinc-200">{runbook.name}</h4>
+                    <span className="text-sm font-medium text-zinc-200 flex items-center gap-1">
+                      <span
+                        className={`w-2 h-2 rounded-full ${
+                          runbook.status === 'completed' ? 'bg-green-400' :
+                          runbook.status === 'running' ? 'bg-yellow-400' :
+                          'bg-zinc-500'
+                        }`}
+                        aria-label={
+                          runbook.status === 'completed' ? 'Completed' :
+                          runbook.status === 'running' ? 'Running' :
+                          'Pending'
+                        }
+                        aria-checked={runbook.status === 'completed'}
+                        role="status"
+                      ></span>
+                      {runbook.name}
+                    </span>
                     <Badge variant="outline" className={`text-xs ${getCategoryColor(runbook.category)}`}>
                       {runbook.category}
                     </Badge>

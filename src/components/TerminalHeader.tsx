@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Zap, Settings, Info, Book, Workflow, Sparkles, Puzzle } from 'lucide-react';
+import { Zap, Settings, Info, Book, Workflow, Sparkles, Puzzle, Sun, Moon } from 'lucide-react';
 import { EnhancedAgentMode } from './EnhancedAgentMode';
 import { CapabilityIndicators } from './CapabilityIndicators';
 
@@ -53,6 +53,30 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
   pluginManagerVisible
 }) => {
   const [showCapabilities, setShowCapabilities] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>(
+    typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  );
+
+  // Toggle theme on root element
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  // Keyboard shortcut: Cmd/Ctrl+T for theme toggle
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 't') {
+        e.preventDefault();
+        setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
 
   return (
     <div className="bg-zinc-900 rounded-t-xl border border-zinc-800 border-b-0">
@@ -148,6 +172,15 @@ export const TerminalHeader: React.FC<TerminalHeaderProps> = ({
           </Button>
           <Button variant="ghost" size="sm" onClick={onClearMessages} className="h-8 px-2 text-xs">
             Clear
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-8 px-2"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun className="w-4 h-4 text-yellow-400" /> : <Moon className="w-4 h-4 text-zinc-500" />}
           </Button>
           <Button variant="ghost" size="sm" className="h-8 px-2">
             <Settings className="w-4 h-4" />

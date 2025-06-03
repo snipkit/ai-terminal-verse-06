@@ -36,6 +36,9 @@ export const useTerminalLogic = () => {
   const [enabledPlugins, setEnabledPlugins] = useState<string[]>(['kubectl', 'git', 'docker', 'npm']);
   const [commandBlocks, setCommandBlocks] = useState<GeneratedCommandBlock[]>([]);
   const [pluginManagerVisible, setPluginManagerVisible] = useState(false);
+  const [isFileBrowsing, setIsFileBrowsing] = useState(false);
+  const [currentPath, setCurrentPath] = useState('.');
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -342,6 +345,7 @@ export const useTerminalLogic = () => {
 
   return {
     messages,
+    setMessages,
     selectedModel,
     setSelectedModel,
     agentMode,
@@ -364,6 +368,12 @@ export const useTerminalLogic = () => {
     handleCommandBlockConfirm,
     handleCommandBlockReject,
     handleCommandBlockExecute,
-    handleTogglePlugin
+    handleTogglePlugin,
+    isFileBrowsing,
+    setIsFileBrowsing,
+    currentPath,
+    setCurrentPath,
+    selectedFile,
+    setSelectedFile,
   };
 };

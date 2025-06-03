@@ -27,6 +27,8 @@ export const InlineEditableInput: React.FC<InlineEditableInputProps> = ({
   const [isEditing, setIsEditing] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [history, setHistory] = useState<string[]>([]);
+  const [historyIndex, setHistoryIndex] = useState<number | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -41,25 +43,47 @@ export const InlineEditableInput: React.FC<InlineEditableInputProps> = ({
     } else if (e.key === 'Escape') {
       setIsEditing(false);
       setInput('');
+      setHistoryIndex(null);
     } else if (e.key === 'Tab' && suggestions.length > 0) {
       e.preventDefault();
       setInput(suggestions[0]);
       setShowSuggestions(false);
+    } else if (e.key === 'ArrowUp') {
+      if (history.length > 0) {
+        e.preventDefault();
+        setHistoryIndex((prev) => {
+          const newIndex = prev === null ? history.length - 1 : Math.max(0, prev - 1);
+          setInput(history[newIndex] || '');
+          return newIndex;
+        });
+      }
+    } else if (e.key === 'ArrowDown') {
+      if (history.length > 0) {
+        e.preventDefault();
+        setHistoryIndex((prev) => {
+          if (prev === null) return null;
+          const newIndex = Math.min(history.length - 1, prev + 1);
+          setInput(history[newIndex] || '');
+          return newIndex;
+        });
+      }
     }
   };
 
   const handleSubmit = () => {
     if (input.trim()) {
       onSubmit(input);
+      setHistory((prev) => [...prev, input]);
       setInput('');
       setIsEditing(false);
       setShowSuggestions(false);
+      setHistoryIndex(null);
     }
   };
 
   const handleInputChange = (value: string) => {
     setInput(value);
-    
+    setHistoryIndex(null);
     // Simulate AI suggestions
     if (capabilities.aiSuggestions && value.length > 2) {
       const mockSuggestions = [
@@ -113,36 +137,48 @@ export const InlineEditableInput: React.FC<InlineEditableInputProps> = ({
             </div>
           ) : (
             <div className="relative">
-              <Input
-                ref={inputRef}
-                value={input}
-                onChange={(e) => handleInputChange(e.target.value)}
-                onKeyDown={handleKeyDown}
-                className="font-mono bg-zinc-900 border-zinc-700 text-zinc-100 text-sm placeholder:text-zinc-500 focus-visible:ring-1 focus-visible:ring-primary pr-20"
-                placeholder="Enter your AI prompt..."
-              />
-              
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1">
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="h-6 w-6 p-0 hover:bg-green-600/20"
-                  onClick={handleSubmit}
-                >
-                  <Check className="w-3 h-3 text-green-400" />
-                </Button>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="h-6 w-6 p-0 hover:bg-red-600/20"
-                  onClick={() => {
-                    setIsEditing(false);
-                    setInput('');
-                  }}
-                >
-                  <X className="w-3 h-3 text-red-400" />
-                </Button>
-              </div>
+              <div className="relative">
+  <Input
+    ref={inputRef}
+    value={input}
+    onChange={(e) => handleInputChange(e.target.value)}
+    onKeyDown={handleKeyDown}
+    className="font-mono bg-zinc-900 border-zinc-700 text-zinc-100 text-sm placeholder:text-zinc-500 focus-visible:ring-1 focus-visible:ring-primary pr-20"
+    placeholder="Enter your AI prompt..."
+    autoComplete="off"
+  />
+  {/* Ghost text for AI suggestion */}
+  {capabilities.aiSuggestions && suggestions.length > 0 && input && suggestions[0].startsWith(input) && (
+    <span
+      className="absolute left-0 top-0 h-full flex items-center pointer-events-none select-none text-zinc-500 font-mono text-sm pl-3"
+      style={{ opacity: 0.5, zIndex: 1 }}
+    >
+      {suggestions[0].slice(input.length)}
+    </span>
+  )}
+  <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1">
+    <Button
+      size="sm"
+      variant="ghost"
+      className="h-6 w-6 p-0 hover:bg-green-600/20"
+      onClick={handleSubmit}
+    >
+      <Check className="w-3 h-3 text-green-400" />
+    </Button>
+    <Button
+      size="sm"
+      variant="ghost"
+      className="h-6 w-6 p-0 hover:bg-red-600/20"
+      onClick={() => {
+        setIsEditing(false);
+        setInput('');
+        setHistoryIndex(null);
+      }}
+    >
+      <X className="w-3 h-3 text-red-400" />
+    </Button>
+  </div>
+</div>
             </div>
           )}
           

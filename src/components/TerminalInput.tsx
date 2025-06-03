@@ -1,7 +1,7 @@
-
 import React, { useState, KeyboardEvent } from 'react';
 import { Input } from '@/components/ui/input';
 import { ChevronRight } from 'lucide-react';
+import { getSyntaxHighlightedText } from './utils/syntaxHighlight';
 
 interface TerminalInputProps {
   onSubmit?: (command: string) => void;
@@ -30,7 +30,7 @@ export const TerminalInput: React.FC<TerminalInputProps> = ({
           <ChevronRight className="w-4 h-4 text-primary" />
         </div>
         <div className="flex-1">
-          <p className="font-mono text-zinc-100 text-sm leading-relaxed">{command}</p>
+          <p className="font-mono text-zinc-100 text-sm leading-relaxed">{getSyntaxHighlightedText(command)}</p>
           {timestamp && (
             <p className="text-xs text-zinc-500 mt-1 font-mono">
               {timestamp.toLocaleTimeString()}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Bot, Play, CheckCircle, AlertCircle, Zap } from 'lucide-react';
+import { getSyntaxHighlightedText } from './utils/syntaxHighlight';
 
 interface AgentStep {
   id: string;
@@ -60,7 +61,9 @@ export const AgentResponse: React.FC<AgentResponseProps> = ({
                     <div className="flex-1">
                       <div className="text-xs text-zinc-200">{step.description}</div>
                       {step.command && (
-                        <div className="text-xs text-zinc-400 font-mono mt-0.5">$ {step.command}</div>
+                        <div className="text-xs text-zinc-400 font-mono mt-0.5">$
+                          {getSyntaxHighlightedText(step.command)}
+                        </div>
                       )}
                       {step.output && (
                         <div className="text-xs text-green-400 font-mono mt-1 bg-zinc-900 p-1 rounded">
