@@ -1,0 +1,10 @@
+name: Vim Keyset
+bindings:
+  - key: j
+    action: cursor-down
+  - key: k
+    action: cursor-up
+  - key: h
+    action: cursor-left
+  - key: l
+    action: cursor-right

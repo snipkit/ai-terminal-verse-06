@@ -2,4 +2,5 @@
 members = [
     "workflow-types",
     "workflows",
+    "workflow-cli",
 ]

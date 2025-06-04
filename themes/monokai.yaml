@@ -1,0 +1,10 @@
+name: Monokai
+colors:
+  background: '#272822'
+  foreground: '#f8f8f2'
+  yellow: '#e6db74'
+  orange: '#fd971f'
+  red: '#f92672'
+  magenta: '#ae81ff'
+  blue: '#66d9ef'
+  green: '#a6e22e'

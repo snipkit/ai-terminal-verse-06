@@ -1,0 +1,1367 @@
+[
+  {
+    "name": "CI",
+    "description": "",
+    "file": "ci.md"
+  },
+  {
+    "name": "Build and release Workflows",
+    "description": "",
+    "file": "publish.md"
+  },
+  {
+    "name": "Root your emulator",
+    "description": "Roots your Android emulator",
+    "file": "adb_root_emulator.md"
+  },
+  {
+    "name": "Clear the Android logcat buffer",
+    "description": "",
+    "file": "clear_the_android_logcat_buffer.md"
+  },
+  {
+    "name": "Pull file from Android device",
+    "description": "Pulls a file from an Android device to a local computer using adb.",
+    "file": "pull_file_from_android_device.md"
+  },
+  {
+    "name": "Push a deeplink to your Android device",
+    "description": "Uses adb to push a deeplink onto an Android device.",
+    "file": "push_deeplink_onto_android_device.md"
+  },
+  {
+    "name": "Push local file onto Android device",
+    "description": "Uses adb to push a file from a local computer to an Android device.",
+    "file": "push_local_file_onto_android_device.md"
+  },
+  {
+    "name": "Search for a package on a Android device",
+    "description": "Use ADB to search for packages on a Android device.",
+    "file": "search_packages_on_android_device.md"
+  },
+  {
+    "name": "Send a Firebase push notification to a local Android emulator",
+    "description": "Uses adb to push a Firebase push notification to your local emulator",
+    "file": "send_firebase_push_notification.md"
+  },
+  {
+    "name": "Start an Android application using Android ADB tools",
+    "description": "Sends an intent to start an Android application directly from the command line by using adb.",
+    "file": "start_an_android_application_using_android_adb_tools.md"
+  },
+  {
+    "name": "Stop an Android app",
+    "description": "Force stops an Android app using adb by using the package name.",
+    "file": "stop_an_android_app.md"
+  },
+  {
+    "name": "Set AWS EKS kubeconfig",
+    "description": "",
+    "file": "aws_eks_update_kubeconfig.md"
+  },
+  {
+    "name": "Store / Backup all installed dependencies into Brewfile",
+    "description": "Write all installed casks/formulae/images/taps into a Brewfile in the current directory.",
+    "file": "backup_installed_dependencies.md"
+  },
+  {
+    "name": "Tap a Homebrew formula repository from GitHub",
+    "description": "Taps a Homebrew formula repository (a repository that contains Homebrew formulae) from GitHub.",
+    "file": "homebrew_tap_repository.md"
+  },
+  {
+    "name": "Install a specific version of a Homebrew formula",
+    "description": "Install a specific version of a formula using Homebrew. To list all available versions, you can run `brew search {{formula_name}}@`.",
+    "file": "install_a_specific_version_of_a_homebrew_formula.md"
+  },
+  {
+    "name": "Install all dependencies from Brewfile",
+    "description": "Install and upgrade (by default) all dependencies from the Brewfile. Optionally you can pass [--file={{file_location}}], Otherwise homebrew finds Brewfile from the current location.",
+    "file": "install_all_dependencies.md"
+  },
+  {
+    "name": "List all installed Homebrew formulae/casks",
+    "description": "Lists all installed Homebrew formulae/casks",
+    "file": "list_installed_formula.md"
+  },
+  {
+    "name": "Pin a formula to its current version",
+    "description": "Pins a version of a homebrew formula to its current version, i.e. it will not be updated when a newer version is available.",
+    "file": "pin_homebrew_formula.md"
+  },
+  {
+    "name": "Reinstall all installed Homebrew formulae/casks",
+    "description": "Reinstalls all installed Homebrew formulae and casks",
+    "file": "reinstall_all_formula.md"
+  },
+  {
+    "name": "Reinstall a Homebrew formula",
+    "description": "Reinstall a Homebrew formula",
+    "file": "reinstall_formula.md"
+  },
+  {
+    "name": "Uninstall a Homebrew package and all of its dependencies",
+    "description": "Uses the external command rmtree to remove a Homebrew package and all of its dependencies",
+    "file": "uninstall_a_homebrew_package_and_all_of_its_dependencies.md"
+  },
+  {
+    "name": "Unpin a homebrew formula",
+    "description": "Unpins a version of a homebrew formula to its current version, i.e. it will not be updated when a newer version is available.",
+    "file": "unpin_homebrew_formula.md"
+  },
+  {
+    "name": "Upgrade all installed Homebrew casks",
+    "description": "Upgrades all applications that were downloaded using Homebrewk Cask. This will not update casks that do not have versioning information or applications that have a built-in upgrade mechanism. To reinstall these casks, append the `--greedy` flag.",
+    "file": "upgrade_all_installed_homebrew_casks.md"
+  },
+  {
+    "name": "Compare two files in VS Code",
+    "description": "Compare two files using code.",
+    "file": "compare_two_files_in_vs_code.md"
+  },
+  {
+    "name": "Open a file or directory in the currently open VS Code window",
+    "description": "Use -r or --reuse-window command line option to attach the currently open VS Code window.",
+    "file": "open_a_file_or_directory_in_the_currently_open_vs_code_window.md"
+  },
+  {
+    "name": "Open a path in VS Code",
+    "description": "This workflow opens the current or the specified folder in VS Code.",
+    "file": "open_a_path_in_vs_code.md"
+  },
+  {
+    "name": "Compare two files in VS Code (Insiders)",
+    "description": "Compare two files using code.",
+    "file": "compare_two_files_in_vs_code_insiders.md"
+  },
+  {
+    "name": "Open a file or directory in the currently open VS Code (Insiders) window",
+    "description": "Use -r or --reuse-window command line option to attach the currently open VS Code window.",
+    "file": "open_a_file_or_directory_in_the_currently_open_vs_code_insiders_window.md"
+  },
+  {
+    "name": "Open a path in VS Code (Insiders)",
+    "description": "This workflow opens the current or the specified folder in VS Code.",
+    "file": "open_a_path_in_vs_code_insiders.md"
+  },
+  {
+    "name": "Optimize CosmWasm Project (Apple ARM Chips)",
+    "description": "Optimize a CosmWasm smart contract project. If a workspace with multiple contracts, use workspace-specific version. Requires Docker to be installed and running. Uses the experimental arm64 variant for use with Apple's chips (M1 & M2 Macs, etc).\n",
+    "file": "cosmwasm-optimize-arm64.md"
+  },
+  {
+    "name": "Optimize CosmWasm Workspace Project (Apple ARM Chips)",
+    "description": "Optimize a CosmWasm project that is organized as a workspace with multiple member contracts. Requires Docker to be installed and running. Uses the experimental arm64 variant for use with Apple's chips (M1 & M2 Macs, etc).\n",
+    "file": "cosmwasm-optimize-workspace-arm64.md"
+  },
+  {
+    "name": "Optimize CosmWasm Workspace Project",
+    "description": "Optimize a CosmWasm project that is organized as a workspace with multiple member contracts. Requires Docker to be installed and running.\n",
+    "file": "cosmwasm-optimize-workspace.md"
+  },
+  {
+    "name": "Optimize CosmWasm Project",
+    "description": "Optimize a CosmWasm smart contract project. If a workspace with multiple contracts, use workspace-specific version. Requires Docker to be installed and running.\n",
+    "file": "cosmwasm-optimize.md"
+  },
+  {
+    "name": "Attach a header to an HTTP request with cURL",
+    "description": "Uses the --header flag to attach an additional header when sending a request to a url.",
+    "file": "attach_a_header_to_an_http_request_with_c_url.md"
+  },
+  {
+    "name": "cURL a URL and follow redirects",
+    "description": "Curls a URL and follows redirects by using the -L flag. To limit the number of redirects, append `--max-redirects <num>`.",
+    "file": "c_url_a_url_and_follow_redirects.md"
+  },
+  {
+    "name": "Display request headers from a cURL request",
+    "description": "Runs curl in verbose mode to display the request headers that were sent with a request.",
+    "file": "display_request_headers_from_a_c_url_request.md"
+  },
+  {
+    "name": "POST JSON data with cURL",
+    "description": "Sends a POST request with JSON data using curl by setting the content-type of the request to \"application/json\".",
+    "file": "post_json_data_with_c_url.md"
+  },
+  {
+    "name": "Set an Bearer authorization header with a cURL request",
+    "description": "Sends a request using cURL with a Bearer token.",
+    "file": "set_an_bearer_authorization_header_with_a_c_url_request.md"
+  },
+  {
+    "name": "Set an OAuth authorization header with a cURL request",
+    "description": "Sends a request using cURL with an OAuth access token.",
+    "file": "set_an_o_auth_authorization_header_with_a_c_url_request.md"
+  },
+  {
+    "name": "Open Cypress",
+    "description": "Open the Cypress Test Runner.",
+    "file": "open-cypress-default.md"
+  },
+  {
+    "name": "Open Cypress With a Mobile Viewport",
+    "description": "Open the Cypress Test Runner with a Mobile Viewport.",
+    "file": "open-cypress-mobile-viewport.md"
+  },
+  {
+    "name": "Run Cypress Headless",
+    "description": "Run Cypress in Headless Mode",
+    "file": "run-cypress-default.md"
+  },
+  {
+    "name": "Run Cypress Headless With a Mobile Viewport",
+    "description": "Run the Cypress Test Runner with a Mobile Viewport in Headless Mode",
+    "file": "run-cypress-mobile-viewport.md"
+  },
+  {
+    "name": "Get the text records for a domain",
+    "description": "Use dig to get the txt records for a domain. Useful for a quick lookup of SPF records.",
+    "file": "txt_records_dig.md"
+  },
+  {
+    "name": "Copy a file from a Docker container to the current host",
+    "description": "Copies files from a Docker container back to the host. Note the container does not need to be running in order to use this command.",
+    "file": "copy_a_file_from_a_docker_container_to_the_current_host.md"
+  },
+  {
+    "name": "Copy files from a host to a docker container",
+    "description": "Copies a file (or multiple files) from a host machine to a container.",
+    "file": "copy_files_from_a_host_to_a_docker_container.md"
+  },
+  {
+    "name": "List docker images from local system",
+    "description": "Lists all docker images currently stored on your system",
+    "file": "list_docker_images_from_local.md"
+  },
+  {
+    "name": "List environment variables from a Docker container",
+    "description": "Lists all environment variables from a Docker container.",
+    "file": "list_environment_variables_from_a_docker_container.md"
+  },
+  {
+    "name": "Remove all stopped docker container, image and volumes",
+    "description": "Remove all stopped docker containers, images, and volumes. Be careful when doing this action, all local images & volumes will be removed and can't be reverted",
+    "file": "prune_all_docker_data.md"
+  },
+  {
+    "name": "Remove all stopped Docker containers",
+    "description": "Removes all stopped containers. To clean up all unused containers, networks, images and volumes in one command, run `docker system prune`.",
+    "file": "remove_all_stopped_docker_containers.md"
+  },
+  {
+    "name": "Remove docker images from local system",
+    "description": "Remove docker images currently stored on your system",
+    "file": "remove_docker_images_from_local.md"
+  },
+  {
+    "name": "Rename a Docker volume",
+    "description": "Renames a Docker volume by creating a new volume, copying all of its content to from the old to the new volume and then deletes the old volume.",
+    "file": "rename_docker_volume.md"
+  },
+  {
+    "name": "Run a script inside a docker container using a shell script",
+    "description": "Runs a shell script located within a running Docker container.",
+    "file": "run_a_script_inside_a_docker_container_using_a_shell_script.md"
+  },
+  {
+    "name": "Start a Bash shell within a Docker container",
+    "description": "Runs a Bash subshell within a Docker container.",
+    "file": "start_a_bash_shell_within_a_docker_container.md"
+  },
+  {
+    "name": "FFprobe file in json",
+    "description": "Show streams and format of media file in json format using ffprobe",
+    "file": "ffprobe_streams_json.md"
+  },
+  {
+    "name": "Delete all lines that contain a specific string from a text file",
+    "description": "Deletes all lines from a text file that contain a specific string. Pass the `-i` flag to modify the file in place.",
+    "file": "delete_all_lines_that_contain_a_specific_string_from_a_text_file.md"
+  },
+  {
+    "name": "Delete empty lines in a file",
+    "description": "Deletes all lines that contain only whitespace from a file.",
+    "file": "delete_empty_lines_in_a_file.md"
+  },
+  {
+    "name": "Find all files in a directory that don't contain a string",
+    "description": "Finds all files in a repository that don't contain a given pattern.",
+    "file": "find_all_files_in_a_directory_that_dont_contain_a_string.md"
+  },
+  {
+    "name": "Insert a line at a specific line number",
+    "description": "Inserts a line of text into a specific line number of a file using sed. The `-i` flag indicates the file is modified in place.",
+    "file": "insert_a_line_at_a_specific_line_number.md"
+  },
+  {
+    "name": "Print the nth line of a file",
+    "description": "Uses sed to print the the the nth line of a file.  This is faster than most other solutions since `NUMq` immediately quits when the line number is hit.",
+    "file": "print_the_nth_line_of_a_file.md"
+  },
+  {
+    "name": "Recursively find and replace within a directory",
+    "description": "Replaces all occurrences of a string recursively within a directory",
+    "file": "recursively_find_and_replace_within_a_directory.md"
+  },
+  {
+    "name": "Recursively search through files that match an extension",
+    "description": "Recursively searches all the files that end in `extension` for the term `search_term`.",
+    "file": "recursively_search_through_files_that_match_an_extension.md"
+  },
+  {
+    "name": "Remove the first line of a text file",
+    "description": "Removes the first line line of a file using tail. Tail defaults to printing the first `x-1` lines, so `+2` indicates it should skip the first line.",
+    "file": "remove_the_first_line_of_a_text_file.md"
+  },
+  {
+    "name": "Replace newline with a space in a file",
+    "description": "Replaces all newlines with a space, by using the `tr` command.",
+    "file": "replace_newline_with_a_space_in_a_file.md"
+  },
+  {
+    "name": "Search committed files",
+    "description": "Search for a pattern among all committed files in a repository.",
+    "file": "search_committed_files.md"
+  },
+  {
+    "name": "Sort a file by line length",
+    "description": "Sorts a text file by line length (including spaces). The `-s` flag indicates that any lines that are the same length are kept in the relative order that they occurred in the input.",
+    "file": "sort_a_file_by_line_length.md"
+  },
+  {
+    "name": "Sum all numbers in a file",
+    "description": "Uses awk to sum all the numbers in a file. This command is also resilient to big numbers since it internally converts each number to a string.",
+    "file": "sum_all_numbers_in_a_file.md"
+  },
+  {
+    "name": "Run Build Runner",
+    "description": "Run build runner to generate code-gen for flutter project.",
+    "file": "flutter_build_runner_build.md"
+  },
+  {
+    "name": "Run Build Runner Watch",
+    "description": "Run build runner to generate code-gen for flutter project when files changes.",
+    "file": "flutter_build_runner_watch.md"
+  },
+  {
+    "name": "Clean Project",
+    "description": "Cleans flutter project and gets dependencies to make project ready for a fresh run.",
+    "file": "flutter_clean_project.md"
+  },
+  {
+    "name": "Change URL of remote git repository",
+    "description": "Sets the URL for a remote git repository to a new URL",
+    "file": "change_url_of_remote_git_repository.md"
+  },
+  {
+    "name": "Clone git repository with specific SSH Key and User",
+    "description": "Clones a git repository given a specific SSH Key Path and configures it to use the desired Name and Email",
+    "file": "clone-with-ssh.md"
+  },
+  {
+    "name": "Clone all repos in a GitHub Organization",
+    "description": "Uses the GitHub API to retrieve a list of repos (up to 100 per page) and clones them.",
+    "file": "clone_all_repos_in_org.md"
+  },
+  {
+    "name": "Create new git remote branch",
+    "description": "Creates a new local git branch and pushes the branch to a remote server to create a remote branch of the same name.",
+    "file": "create_new_git_remote_branch.md"
+  },
+  {
+    "name": "Delete local and remote git branch",
+    "description": "Deletes a branch both locally and remotely. The first command deletes the remote branch, whereas the second command deletes the command locally.",
+    "file": "delete_local_and_remote_git_branch.md"
+  },
+  {
+    "name": "Delete local git branch",
+    "description": "Deletes a local git branch only if it has been fully merged into the upstream branch. To force delete the branch irrespective of the its merged status, add the `--force` flag.",
+    "file": "delete_local_git_branch.md"
+  },
+  {
+    "name": "Delete remote git branch",
+    "description": "Deletes a remote git branch. A local git branch of the same name, if any, will remain untouched.",
+    "file": "delete_remote_git_branch.md"
+  },
+  {
+    "name": "Modify the most recent commit message",
+    "description": "Amends the most recent git commit with a new message. This will not update the commit on a remote branch unless you force push the branch,",
+    "file": "modify_the_most_recent_commit_message.md"
+  },
+  {
+    "name": "Push a tag to a remote git repository",
+    "description": "Pushes a single tag to a remote server",
+    "file": "push_a_tag_to_a_remote_git_repository.md"
+  },
+  {
+    "name": "Rebase master into feature branch",
+    "description": "Rebases master into the feature branch",
+    "file": "rebase_master_into_current_branch.md"
+  },
+  {
+    "name": "Remove a git submodule",
+    "description": "Removes all traces of a git submodule from a repository. The `.git` dir of the submodule is kept around in the `/modules` folder of the main projects `.git` dir to make it possible to checkout past commits without requiring fetching from another repository.",
+    "file": "remove_a_git_submodule.md"
+  },
+  {
+    "name": "Remove all untracked files and folders",
+    "description": "Remove all local untracked files and folders",
+    "file": "remove_all_untracked_files_and_folders.md"
+  },
+  {
+    "name": "Rename local git branch",
+    "description": "Renames a local git branch while keeping the name of the upstream branch unchanged.",
+    "file": "rename_local_git_branch.md"
+  },
+  {
+    "name": "Reset file back to git revision",
+    "description": "Resets a file back to a specific commit hash.",
+    "file": "reset_file_back_to_git_revision.md"
+  },
+  {
+    "name": "Reset local branch to match remote branch",
+    "description": "Resets a local branch to match a remote branch by pulling the most recent changes from the remote branch and then force resetting the local branch to match the remote branch.",
+    "file": "reset_local_branch_to_match_remote_branch.md"
+  },
+  {
+    "name": "Set upstream branch",
+    "description": "Sets the upstream for a local branch to a remote branch.",
+    "file": "set_upstream_branch.md"
+  },
+  {
+    "name": "Squash last n commits together",
+    "description": "Squashes the last n commits together. This approach requires rewriting a commit message for the new squashed changes, unlike running `git rebase`.",
+    "file": "squash_last_n_commits_together.md"
+  },
+  {
+    "name": "Synchronize upstream branch",
+    "description": "Sync the local branch to the remote branch with the same name.",
+    "file": "synchronize_upstream_branch.md"
+  },
+  {
+    "name": "Undo git add",
+    "description": "Removes a file that was staged for commit by `git add`. Executing `git reset` without any file name will unstage all changes.",
+    "file": "undo_git_add.md"
+  },
+  {
+    "name": "Undo most recent git commit",
+    "description": "Undos the last git commit while leaving the working tree (the state of the files on disk) untouched.",
+    "file": "undo_most_recent_git_commit.md"
+  },
+  {
+    "name": "Delete newly git-ignored files from your repository",
+    "description": "After adding new files to the .gitignore file, these commands will update the git index",
+    "file": "update_git_index_after_ignoring_files.md"
+  },
+  {
+    "name": "Change username of git",
+    "description": "Sets the username for git",
+    "file": "update_git_username.md"
+  },
+  {
+    "name": "Graphite - Checkout a branch",
+    "description": "Alias `bco`. Switch to or checkout a branch. Similar to `git checkout <branch_name>`",
+    "file": "gt_branch_checkout.md"
+  },
+  {
+    "name": "Graphite - Create a branch with an accompanying commit message",
+    "description": "Create a new branch stacked on top of the current branch and commit staged changes. If no branch name is specified but a commit message is passed, generate a branch name from the commit message.",
+    "file": "gt_branch_new_with_commit_message.md"
+  },
+  {
+    "name": "Graphite - Restacks the current branch to its parent",
+    "description": "Alias: `br`. Ensure the current branch is based on its parent, rebasing if necessary.",
+    "file": "gt_branch_restack.md"
+  },
+  {
+    "name": "Graphite - Pushes (force) the current branch to GitHub",
+    "description": "Alias: `bs`. Idempotently force push the current branch to GitHub, creating or updating a pull request.",
+    "file": "gt_branch_submit.md"
+  },
+  {
+    "name": "Graphite - Edit the branches",
+    "description": "Alias `dse`. Edit the order of the branches between trunk and the current branch, restacking all of their descendants.",
+    "file": "gt_downstack_edit.md"
+  },
+  {
+    "name": "Graphite - Get downstack from remote",
+    "description": "Alias `dsg`. Get branches from trunk to the specified branch from remote, prompting the user to resolve conflicts.",
+    "file": "gt_downstack_get.md"
+  },
+  {
+    "name": "Graphite - Rebase the parent branches",
+    "description": "Alias `dsr`. From trunk to the current branch, ensure each is based on its parent, rebasing if necessary.",
+    "file": "gt_downstack_restack.md"
+  },
+  {
+    "name": "Graphite - Push the parent branches to GitHub",
+    "description": "Alias `dss`.  Idempotently force push all branches from trunk to the current branch to GitHub, creating or updating distinct pull requests for each.",
+    "file": "gt_downstack_submit.md"
+  },
+  {
+    "name": "Graphite - Run a command on every branch within a stack",
+    "description": "Alias `dst`. From trunk to the current branch, run the provided command on each branch and aggregate the results.",
+    "file": "gt_downstack_test.md"
+  },
+  {
+    "name": "Graphite - Recursively track parent branches",
+    "description": "Alias `dstr`. Track a series of untracked branches, by specifying each branch's parent, stopping when you reach a tracked branch.",
+    "file": "gt_downstack_track.md"
+  },
+  {
+    "name": "Graphite - Synchronize with remote",
+    "description": "A quick command to pull changes from your trunk branch and subsequently restack upstack changes. Same as `gt repo sync && gt stack restack` under the hood. Also deletes any branches that have been merged.",
+    "file": "gt_synchronize_with_remote.md"
+  },
+  {
+    "name": "Graphite - Troubleshoot the Graphite CLI",
+    "description": "This combination of commands resets Graphite repo metadata and clears the cache.",
+    "file": "gt_troubleshoot_graphite_cli.md"
+  },
+  {
+    "name": "Compare two file in IntelliJ Idea",
+    "description": "Compare two files using IntelliJ Idea",
+    "file": "compare_two_files_in_intellij_idea_workflow.md"
+  },
+  {
+    "name": "Open a file on a specific line in IntelliJ Idea",
+    "description": "Use the command line to open a file on a specific line in IntelliJ Idea.",
+    "file": "open_a_file_on_a_specific_line_in_intellij_idea_workflow.md"
+  },
+  {
+    "name": "Open a file or directory in a IntelliJ Idea editor",
+    "description": "Use the command line to open a file in IntelliJ Idea.",
+    "file": "open_a_file_or_directory_in_intellij_idea_workflow.md"
+  },
+  {
+    "name": "Clear Xcode Derived Data",
+    "description": "",
+    "file": "clear_xcode_derived_data.md"
+  },
+  {
+    "name": "Opens a Bash shell into Kubernetes pod",
+    "description": "",
+    "file": "exec_shell_inside_pod.md"
+  },
+  {
+    "name": "List events for a single Kubernetes pod",
+    "description": "Lists the events for a single Kubernetes pod by using the field-selector flag.",
+    "file": "list_events_for_a_single_kubernetes_pod.md"
+  },
+  {
+    "name": "List all Kubernetes pods by app label",
+    "description": "Lists the images of pods fetched by app label",
+    "file": "list_pod_images_by_app.md"
+  },
+  {
+    "name": "Mark node as schedulable",
+    "description": "Mark node as schedulable",
+    "file": "mark_node_schedulable.md"
+  },
+  {
+    "name": "Mark node as unschedulable",
+    "description": "Mark node as unschedulable",
+    "file": "mark_node_unschedulable.md"
+  },
+  {
+    "name": "Forward one or more local ports to a pod.",
+    "description": "Listen on port specified locally, forwarding to {{pod_port}} in the pod",
+    "file": "pod_port_forward.md"
+  },
+  {
+    "name": "Report when a Kubernetes job has finished",
+    "description": "Waits for a specified Kubernetes job to complete. The default timeout is 30 seconds, but can be adjusted by passing in the `--timeout` flag.",
+    "file": "report_when_a_kubernetes_job_has_finished.md"
+  },
+  {
+    "name": "Rollback to the previous deployment",
+    "description": "Rollback to the previous deployment",
+    "file": "rollback_to_previous_deployment.md"
+  },
+  {
+    "name": "Run a Bash command within a Kubernetes pod",
+    "description": "Runs a Bash command in a Kubernetes pod. The double dash symbol \"--\" is used to separate the command you want to run inside the container from the kubectl arguments.",
+    "file": "run_a_bash_command_within_a_kubernetes_pod.md"
+  },
+  {
+    "name": "Set a new size for a deployment.",
+    "description": "Set a new size for a deployment. If --current-replicas or --resource-version is specified, it is validated before the scale is attempted, and it is guaranteed that the precondition holds true when the scale is sent to the server.",
+    "file": "scale_deployment.md"
+  },
+  {
+    "name": "Show a continuous stream of Kubernetes logs",
+    "description": "Continuously streams logs from a given Kubernetes pod by using the `-f` flag.",
+    "file": "show_a_continuous_stream_of_kubernetes_logs.md"
+  },
+  {
+    "name": "Sort Kubernetes pods by age",
+    "description": "Sorts all Kubernetes pods by the pod's start time. To sort by the pod's creation time, specify `.metadata.creationTimestamp` as the value for `--sort-by`.",
+    "file": "sort_kubernetes_pods_by_age.md"
+  },
+  {
+    "name": "Forward one or more local ports of a service",
+    "description": "Listen on port specified locally, forwarding to the targetPort of the service's port with the same value in a pod selected by the service.",
+    "file": "svc_port_forward.md"
+  },
+  {
+    "name": "Configure Load Balancer",
+    "description": "Configure and reload Nginx load balancer with health check validation",
+    "file": "load-balancer.md"
+  },
+  {
+    "name": "MacOS 13+ - Disable/Enabled mouse acceleration",
+    "description": "Update mouse acceleration built into MacOS. Returns -1 when disabled. For MacOS 13+",
+    "file": "mac_mouse_acceleration.md"
+  },
+  {
+    "name": "Starts or stops the MacOS Spotlight indexing process mds_stores.",
+    "description": "mds_stores is a CPU intensive process that runs for Spotlight indexing. This command will enable or disable that process.",
+    "file": "spotlight-indexing.md"
+  },
+  {
+    "name": "Add a Google BigQuery resource to the Meroxa Platform",
+    "description": "Add a Google BigQuery resource to the Meroxa Platform",
+    "file": "resources_create_bigquery.md"
+  },
+  {
+    "name": "Add an Elasticsearch resource to the Meroxa Platform",
+    "description": "Add an Elasticsearch resource to the Meroxa Platform",
+    "file": "resources_create_elasticsearch.md"
+  },
+  {
+    "name": "Add a MongoDB resource to the Meroxa Platform",
+    "description": "Add a MongoDB resource to the Meroxa Platform",
+    "file": "resources_create_mongodb.md"
+  },
+  {
+    "name": "Add a MySQL resource to the Meroxa Platform",
+    "description": "Add a MySQL resource to the Meroxa Platform",
+    "file": "resources_create_mysql.md"
+  },
+  {
+    "name": "Add a Postgres resource with logical replication to the Meroxa Platform",
+    "description": "Add a Postgres resource with logical replication to the Meroxa Platform",
+    "file": "resources_create_postgres_with_logical_replication.md"
+  },
+  {
+    "name": "Add a Postgres resource without logical replication to the Meroxa Platform",
+    "description": "Add a Postgres resource without logical replication to the Meroxa Platform",
+    "file": "resources_create_postgres_without_logical_replication.md"
+  },
+  {
+    "name": "Add an Amazon Redshift resource to the Meroxa Platform",
+    "description": "Add an Amazon Redshift resource to the Meroxa Platform",
+    "file": "resources_create_redshift.md"
+  },
+  {
+    "name": "Add an Amazon S3 resource to the Meroxa Platform",
+    "description": "Add an Amazon S3 resource to the Meroxa Platform",
+    "file": "resources_create_s3.md"
+  },
+  {
+    "name": "Add a Snowflake resource to the Meroxa Platform",
+    "description": "Add a Snowflake resource to the Meroxa Platform",
+    "file": "resources_create_snowflake.md"
+  },
+  {
+    "name": "Add a Microsoft SQL Server resource to the Meroxa Platform",
+    "description": "Add a Microsoft SQL Server resource to the Meroxa Platform",
+    "file": "resources_create_sqlserver.md"
+  },
+  {
+    "name": "Configure your current NativeScript project to target the selected platform.",
+    "description": "Configures the current NativeScript project to target the selected platform. When you add a target platform, the NativeScript CLI creates a corresponding platform-specific subdirectory under the platforms directory. This platform-specific directory contains the necessary files to let you build your project for the target platform.",
+    "file": "add_platform.md"
+  },
+  {
+    "name": "Build your NativeScript project for Android or iOS.",
+    "description": "Builds your NativeScript project for Android or iOS and produces an application package that you can manually deploy on a device or native emulator.",
+    "file": "build_the_project.md"
+  },
+  {
+    "name": "Check Nativescript system's configuration.",
+    "description": "Checks your system for configuration problems which might prevent the NativeScript CLI from working properly for the specified platform, if configured.",
+    "file": "check_nativescript_system_configuration.md"
+  },
+  {
+    "name": "Clean your NativeScript project artifacts.",
+    "description": "Cleans your NativeScript project artifacts.",
+    "file": "clean_project_artifacts.md"
+  },
+  {
+    "name": "Configure NativeScript CLI error reporting.",
+    "description": "Configures anonymous error reporting for the NativeScript CLI.",
+    "file": "configure_error_reporting.md"
+  },
+  {
+    "name": "Configure NativeScript command-line autocompletion.",
+    "description": "Prints your current NativeScript command-line completion settings. If disabled, prompts you to enable it.",
+    "file": "configure_shell_autocompletion.md"
+  },
+  {
+    "name": "Configures your NativeScript project for unit testing with a selected framework.",
+    "description": "Configures your NativeScript project for unit testing with a selected framework. This operation installs the @nativescript/unit-test-runner npm module and its dependencies and creates a tests folder in the app directory.",
+    "file": "configure_unit_testing_framework.md"
+  },
+  {
+    "name": "Configure NativeScript CLI usage reporting.",
+    "description": "Configures anonymous usage reporting for the NativeScript CLI.",
+    "file": "configure_usage_reporting.md"
+  },
+  {
+    "name": "Create a NativeScript app.",
+    "description": "Interactively creates a new NativeScript app based on a predefined template.",
+    "file": "create_nativecript_app.md"
+  },
+  {
+    "name": "Initiate a debugging session for your NativeScript project.",
+    "description": "Initiates a debugging session for your NativeScript project on a connected device or native emulator. The command will prepare, build, deploy and launch the app before starting the debug session.",
+    "file": "debug_the_project.md"
+  },
+  {
+    "name": "Prepare, build and deploy your NativeScript project to a connected device or native emulator.",
+    "description": "Prepares, builds and deploys your NativeScript project to a connected device or native emulator. It will deploy the app on all connected devices targeting the selected platform.",
+    "file": "deploy_the_project.md"
+  },
+  {
+    "name": "Display proxy settings of the NativeScript CLI.",
+    "description": "Displays the current proxy settings of the NativeScript CLI.",
+    "file": "display_nativescript_proxy_settings.md"
+  },
+  {
+    "name": "Display version information about NativeScript.",
+    "description": "Displays version information about the NativeScript CLI, core modules, and runtimes.",
+    "file": "display_version_information_about_nativescript.md"
+  },
+  {
+    "name": "Generate all icons for Android and iOS platforms for your NativeScript project.",
+    "description": "Generates all icons for Android and iOS platforms for your NativeScript. It places the generated images in the correct directories under App_Resources/<platform> directory.",
+    "file": "generate_icons_resource.md"
+  },
+  {
+    "name": "Generate platform's (iOS and/or Android) typings for your NativeScript project.",
+    "description": "Generate iOS & Android typings for your NativeScript project. By default respecting platform support, so no iOS typings generated on Windows/Linux machines.",
+    "file": "generate_platform_typings.md"
+  },
+  {
+    "name": "Generate all splashscreens for Android and iOS platforms for your NativeScript project.",
+    "description": "Generates all splashscreens for Android and iOS platforms for your NativeScript project. It places the generated images in the correct directories under App_Resources/<platform> directory.",
+    "file": "generate_splashscreens_resource.md"
+  },
+  {
+    "name": "Install dependencies for your NativeScript project.",
+    "description": "Installs all dependencies described in a valid package.json or installs a selected NativeScript development module as a dev dependency.",
+    "file": "install_dependencies.md"
+  },
+  {
+    "name": "List applications installed on a device using NativeScript CLI.",
+    "description": "NativeScript lists the installed applications on all connected Android and iOS devices.",
+    "file": "list_applications_installed_on_a_device.md"
+  },
+  {
+    "name": "List all application records in iTunes Connect using NativeScript CLI.",
+    "description": "NativeScript lists all application records in iTunes Connect. The list contains name, version and bundle ID for each application record.",
+    "file": "list_applications_records_in_itunes_connect.md"
+  },
+  {
+    "name": "List all recognized connected devices using NativeScript CLI.",
+    "description": "NativeScript lists all recognized connected Android or iOS devices with serial number and index, grouped by platform.",
+    "file": "list_connected_devices.md"
+  },
+  {
+    "name": "Lists all platforms that your NativeScript project currently targets.",
+    "description": "Lists all platforms that your NativeScript project currently targets. You can build and deploy your project only for these target platforms.",
+    "file": "list_platforms.md"
+  },
+  {
+    "name": "Manage Plugins in your NativeScript project.",
+    "description": "Lets you manage the plugins for your NativeScript project.",
+    "file": "manage_plugins.md"
+  },
+  {
+    "name": "Migrate Nativescript dependencies to the latest version.",
+    "description": "Migrates the app dependencies to a form compatible with the latest NativeScript. Running this command will not affect the codebase of the application and you might need to do additional changes manually.",
+    "file": "migrate_nativescript_dependencies_to_the_latest_version copy.md"
+  },
+  {
+    "name": "Open the device log stream using NativeScript CLI.",
+    "description": "NativeScript opens the device log stream for a selected connected Android or iOS device.",
+    "file": "open_device_log_stream.md"
+  },
+  {
+    "name": "Prepare the app's App_Resources and the plugins platforms directories in your NativeScript project.",
+    "description": "Starts a Webpack compilation and prepares the app's App_Resources and the plugins platforms directories in your NativeScript project. The output is generated in a subdirectory for the selected target platform in the platforms directory. This lets you build the project for the selected platform.",
+    "file": "prepare_resources_and_platforms.md"
+  },
+  {
+    "name": "Remove the selected platform from your NativeScript project.",
+    "description": "Removes the selected platform from the platforms that your NativeScript project currently targets. After removing the target platform, you can no longer build and deploy your app on devices which run on the platform.",
+    "file": "remove_platform.md"
+  },
+  {
+    "name": "Run the selected NativeScript application on a connected device.",
+    "description": "Runs the selected NativeScript application on a connected Android or iOS device.",
+    "file": "run_project_on_device.md"
+  },
+  {
+    "name": "Run the NativeScript project for Android or iOS.",
+    "description": "Runs your NativeScript project on all connected devices or in native emulators for the selected platform. The command will work with all currently running Android devices and emulators. The command will prepare, build and deploy the app when necessary. By default listens for changes in your code, synchronizes those changes and refreshes all selected devices.",
+    "file": "run_the_project.md"
+  },
+  {
+    "name": "Run unit tests on your NativeScript project.",
+    "description": "Runs unit tests on the selected mobile platform. Your NativeScript project must already be configured for unit testing by running $ ns test init.",
+    "file": "run_unit_tests.md"
+  },
+  {
+    "name": "Show current package manager using NativeScript CLI.",
+    "description": "NativeScript prints the value of the current package manager.",
+    "file": "show_current_package_manager.md"
+  },
+  {
+    "name": "Show information about the NativeScript CLI commands in the browser.",
+    "description": "Shows additional information about the NativeScript CLI commands in this list in the browser.",
+    "file": "show_help_about_the_commands_in_the_browser.md"
+  },
+  {
+    "name": "Update Nativescript dependencies to the latest version.",
+    "description": "Updates your NativeScript project with the latest versions of iOS/Android runtimes, cross-platform modules and @nativescript/webpack.",
+    "file": "update_nativescript_dependencies_to_the_latest_version.md"
+  },
+  {
+    "name": "Update the NativeScript runtime for the specified platform.",
+    "description": "Updates the NativeScript runtime for the specified platform.",
+    "file": "update_platform.md"
+  },
+  {
+    "name": "Update the App_Resources's folder structure in your NativeScript project.",
+    "description": "Updates the App_Resources/'s internal folder structure in your NativeScript project to conform to that of an Android Studio project.",
+    "file": "update_resource.md"
+  },
+  {
+    "name": "Upload NativeScript project to iTunes Connect.",
+    "description": "Uploads your NativeScript project to iTunes Connect. The command either issues a production build and uploads it to iTunes Connect, or uses an already built package to upload.",
+    "file": "upload_project_to_itunes_connect .md"
+  },
+  {
+    "name": "Generate an app using Nest.js",
+    "description": "Generate a app with the given name.",
+    "file": "generate_app_nestjs.md"
+  },
+  {
+    "name": "Generate a class using Nest.js",
+    "description": "Generate a class with the given name.",
+    "file": "generate_class_nestjs.md"
+  },
+  {
+    "name": "Generate a controller using Nest.js",
+    "description": "Generate a controller with the given name.",
+    "file": "generate_controller_nestjs.md"
+  },
+  {
+    "name": "Generate a interface using Nest.js",
+    "description": "Generate a interface with the given name.",
+    "file": "generate_interface_nestjs.md"
+  },
+  {
+    "name": "Generate a service using Nest.js",
+    "description": "Generate a service with the given name.",
+    "file": "generate_service_nestjs.md"
+  },
+  {
+    "name": "Create Next.js App",
+    "description": "Create a new Next.js application",
+    "file": "create_next_app.md"
+  },
+  {
+    "name": "Deploy Nginx Load Balancer",
+    "description": "Deploy and configure Nginx as a load balancer in Kubernetes cluster",
+    "file": "nginx-deployment.md"
+  },
+  {
+    "name": "Find and delete node_modules in a folder",
+    "description": "Finds and deletes all node_modules in a folder",
+    "file": "find_and_delete_node_modules_in_a_folder.md"
+  },
+  {
+    "name": "Find unused npm packages in package.json",
+    "description": "Runs depcheck to find all unused packages listed in package.json",
+    "file": "find_unused_npm_packages_in_package_json.md"
+  },
+  {
+    "name": "Find version of an installed npm package",
+    "description": "Lists the version name of an installed package. To see the versions of all installed packages, run `npm list` without passing a package name.",
+    "file": "find_version_of_an_installed_npm_package.md"
+  },
+  {
+    "name": "Install npm package from GitHub directly",
+    "description": "Installs an NPM package from GitHub by specifying the repo and branch. For example, if the repo was `warpdotdev/warp`. the command would be `npm install warpdotdev/warp#main`.",
+    "file": "install_npm_package_from_git_hub_directly.md"
+  },
+  {
+    "name": "List all globally installed NPM packages",
+    "description": "Lists all globally installed NPM packages, avoiding including any package's dependencies in the view.",
+    "file": "list_all_globally_installed_npm_packages.md"
+  },
+  {
+    "name": "Finds all node_modules in a folder",
+    "description": "Finds and all node_modules in a folder and displays information about them",
+    "file": "look_for_all_directories_with_node_modules_and_show_them.md"
+  },
+  {
+    "name": "Reinstall all NPM dependencies",
+    "description": "Reinstalls all dependencies by removing the node_modules folder and then reinstalling.",
+    "file": "reinstall_all_npm_dependencies.md"
+  },
+  {
+    "name": "Remove all global npm modules",
+    "description": "Removes all global NPM modules by listing all the global top level modules, and removing all modules that are not actually NPM itself (i.e. don't end with \"/NPM\")",
+    "file": "remove_all_global_npm_modules.md"
+  },
+  {
+    "name": "Uninstall a local NPM package",
+    "description": "Removes a module from `node_modules` but does not update `package.json`. To also remove the package from the list of dependencies in `package.json`, add the `--save` flag.",
+    "file": "uninstall_a_local_npm_package.md"
+  },
+  {
+    "name": "Update each dependency in package.json to the latest version (NPM)",
+    "description": "Installs the `npm-check-updates` tool, and runs it to update every package to the latest version.",
+    "file": "update_each_dependency_in_package_json_to_the_latest_version_npm.md"
+  },
+  {
+    "name": "Update NPM to the latest version",
+    "description": "Updates npm to the latest version .",
+    "file": "update_npm_to_the_latest_version.md"
+  },
+  {
+    "name": "Create Nuxt app",
+    "description": "Create Nuxt application",
+    "file": "create_nuxt_app.md"
+  },
+  {
+    "name": "Create a new Nx workspace",
+    "description": "Create a new Nx workspace using the latest version of Nx.",
+    "file": "create-nx-workspace-default.md"
+  },
+  {
+    "name": "Create a new Nx workspace with a React application",
+    "description": "Create a new Nx workspace with a React application using the latest version of Nx.",
+    "file": "create-nx-workspace-react.md"
+  },
+  {
+    "name": "Generate a new application in your Nx workspace",
+    "description": "This command generates a new application in your existing Nx workspace.",
+    "file": "generate-application.md"
+  },
+  {
+    "name": "Generate a new library in your Nx workspace",
+    "description": "This command generates a new library in your existing Nx workspace.",
+    "file": "generate-library.md"
+  },
+  {
+    "name": "Add Nx to an Existing Project",
+    "description": "If you have an existing Lerna or Yarn monorepo, you can gain the benefits of Nx's computation cache and distributed task execution without modifying the file structure by running this command",
+    "file": "nx-add-to-monorepo.md"
+  },
+  {
+    "name": "Migrate Create-React-App project into a Nx Workspace",
+    "description": "If you have an existing Create-React-App project, you can gain the benefits of Nx's computation cache and distributed task execution by running this command",
+    "file": "nx-migrate-cra.md"
+  },
+  {
+    "name": "View the project graph",
+    "description": "Start the project graph for the current Nx workspace. This will graph the dependencies within your workspace.",
+    "file": "project-graph.md"
+  },
+  {
+    "name": "Remove project from Nx workspace",
+    "description": "Remove a project from your Nx workspace.",
+    "file": "remove-project-from-workspace.md"
+  },
+  {
+    "name": "Test only the affected code in your Nx workspace",
+    "description": "Test only those projects that are affected by the changes in the current Nx workspace.",
+    "file": "test-only-affected-projects.md"
+  },
+  {
+    "name": "Auto-generate Playwright tests with Codegen",
+    "description": "Auto-generates Playwright tests with Codegen.",
+    "file": "auto-generate-tests-with-codegen.md"
+  },
+  {
+    "name": "Run a single Playwright project",
+    "description": "Run Playwright tests in a project.",
+    "file": "run-a-single-project.md"
+  },
+  {
+    "name": "Run a single Playwright test file",
+    "description": "Runs a single Playwright test file.",
+    "file": "run-a-single-test-file.md"
+  },
+  {
+    "name": "Run all Playwright tests",
+    "description": "Runs all Playwright tests",
+    "file": "run-all-tests.md"
+  },
+  {
+    "name": "Run Playwright test in a specific browser",
+    "description": "Runs Playwright tests in a specific browser.",
+    "file": "run-test-in-a-specific-browser.md"
+  },
+  {
+    "name": "Run Playwright tests in debug mode",
+    "description": "Runs Playwright tests in debug mode.",
+    "file": "run-test-in-debug-mode.md"
+  },
+  {
+    "name": "Run Playwright test with the title",
+    "description": "Runs Playwright test with the title.",
+    "file": "run-test-with-title.md"
+  },
+  {
+    "name": "Run Playwright tests in headed mode",
+    "description": "Runs Playwright tests in headed mode.",
+    "file": "run-tests-in-headed-mode.md"
+  },
+  {
+    "name": "Show report on Playwright tests",
+    "description": "Opens a webpage showing a report on your Playwright tests.",
+    "file": "show-report.md"
+  },
+  {
+    "name": "Find version of an installed pnpm package",
+    "description": "Lists the version name of an installed package. To see the versions of all installed packages, run `pnpm list` without passing a package name.",
+    "file": "find_version_of_an_installed_pnpm_package.md"
+  },
+  {
+    "name": "List all globally installed PNPM packages",
+    "description": "Lists all globally installed PNPM packages, avoiding including any package's dependencies in the view.",
+    "file": "list_all_globally_installed_pnpm_packages.md"
+  },
+  {
+    "name": "Uninstall a local PNPM package",
+    "description": "Removes a module from `node_modules` and from `package.json`.",
+    "file": "uninstall_a_local_pnpm_package.md"
+  },
+  {
+    "name": "Update each dependency in package.json to the latest version (PNPM)",
+    "description": "Sets strict-peer-dependencies to false globally and updates each dependency in package.json to the latest version.",
+    "file": "update_each_dependency_in_package_json_to_the_latest_version_pnpm.md"
+  },
+  {
+    "name": "Update PNPM to the latest version",
+    "description": "Updates pnpm to the latest version.",
+    "file": "update_pnpm_to_the_latest_version.md"
+  },
+  {
+    "name": "Append value(s) to an array",
+    "description": "Loops through an array, running a command on each value.",
+    "file": "array_append_values.md"
+  },
+  {
+    "name": "Make a new, empty array",
+    "description": "Makes an empty array and assigns it to variable \"array_name\"",
+    "file": "array_create.md"
+  },
+  {
+    "name": "Get number of elements in an array",
+    "description": "Gets the number of elements in an array, and prints it to stdout.",
+    "file": "array_get_size.md"
+  },
+  {
+    "name": "Get a value from an array",
+    "description": "Gets a value from an array and prints it to stdout.",
+    "file": "array_get_value.md"
+  },
+  {
+    "name": "Loop through an array and run a command on each value",
+    "description": "Loops through an array, running a command on each value.",
+    "file": "array_loop_through.md"
+  },
+  {
+    "name": "Set an index in an array to a value",
+    "description": "Makes an empty array and assigns it to variable \"array_name\"",
+    "file": "array_set_value.md"
+  },
+  {
+    "name": "Chain commands together by forwarding output as input to the next command (pipe)",
+    "description": "Executes command_1 and passes the output as input to command_2",
+    "file": "chain_commands_together_pipe.md"
+  },
+  {
+    "name": "Check if a file exists",
+    "description": "Returns an exit code of 0 if the file exists.",
+    "file": "check_if_a_file_exists.md"
+  },
+  {
+    "name": "Check if a file exists and is a regular file",
+    "description": "Returns an exit code of 0 if the file exists and is a regular file (i.e. is not a directory or a symbolic link).",
+    "file": "check_if_a_file_exists_and_is_a_regular_file.md"
+  },
+  {
+    "name": "Check if a file exists and is directory",
+    "description": "Returns an exit code of 0 if the file exists and is a directory.",
+    "file": "check_if_a_file_exists_and_is_directory.md"
+  },
+  {
+    "name": "Check if a number is greater than another number",
+    "description": "Returns an exit code of 0 if integer_a is greater than integer_b.",
+    "file": "check_if_a_number_is_greater_than_another_number.md"
+  },
+  {
+    "name": "Check if a number is greater than or equal to another number",
+    "description": "Returns an exit code of 0 if integer_a is greater than or equal to integer_b.",
+    "file": "check_if_a_number_is_greater_than_or_equal_to_another_number.md"
+  },
+  {
+    "name": "Check if a number is less than another number",
+    "description": "Returns an exit code of 0 if integer_a is less than or equal to integer_b.",
+    "file": "check_if_a_number_is_less_than_another_number.md"
+  },
+  {
+    "name": "Check if a number is less than or equal to another number",
+    "description": "Returns an exit code of 0 if integer_a is less than or equal to integer_b.",
+    "file": "check_if_a_number_is_less_than_or_equal_to_another_number.md"
+  },
+  {
+    "name": "Check if file exists and has a size greater than zero",
+    "description": "Returns an exit code of 0 if the file exists and has a size greater than zero.",
+    "file": "check_if_file_exists_and_has_a_size_greater_than_zero.md"
+  },
+  {
+    "name": "Check if file exists and is executable by the current process",
+    "description": "Returns an exit code of 0 if the file is executable by the current process.",
+    "file": "check_if_file_exists_and_is_executable_by_the_current_process.md"
+  },
+  {
+    "name": "Check if file exists and is readable by the current process",
+    "description": "Returns an exit code of 0 if the file is readable by the current process.",
+    "file": "check_if_file_exists_and_is_readable_by_the_current_process.md"
+  },
+  {
+    "name": "Check if file exists and is writable by the current process",
+    "description": "Returns an exit code of 0 if the file is writable by the current process.",
+    "file": "check_if_file_exists_and_is_writable_by_the_current_process.md"
+  },
+  {
+    "name": "Check if string length is non-zero",
+    "description": "Returns an exit code of 0 if the length of the string is non-zero.",
+    "file": "check_if_string_length_is_non_zero.md"
+  },
+  {
+    "name": "Check if string length is zero",
+    "description": "Returns an exit code of 0 if the length of the string is zero.",
+    "file": "check_if_string_length_is_zero.md"
+  },
+  {
+    "name": "Check if two numbers are equal",
+    "description": "Returns an exit code of 0 if the two integers are equal to each other.",
+    "file": "check_if_two_numbers_are_equal.md"
+  },
+  {
+    "name": "Check if two numbers are not equal to each other",
+    "description": "Returns an exit code of 0 if the two integers are not equal to each other.",
+    "file": "check_if_two_numbers_are_not_equal_to_each_other.md"
+  },
+  {
+    "name": "Check if two strings are equal to each other",
+    "description": "Tests if two strings are equal and returns an exit code of 0 if so.",
+    "file": "check_if_two_strings_are_equal_to_each_other.md"
+  },
+  {
+    "name": "Check if two strings are not equal to each other",
+    "description": "Tests if two strings are not equal and returns an exit code of 0 if so.",
+    "file": "check_if_two_strings_are_not_equal_to_each_other.md"
+  },
+  {
+    "name": "Kill processes at port",
+    "description": "Kill processes at a port.",
+    "file": "kill_processes_at_port.md"
+  },
+  {
+    "name": "Launch tabs with clipboard URLs",
+    "description": "Launch all URLs (arranged in a list in the clipboard buffer). Will be launched using default browser and tab creation preference. Useful for copying a column of URLs from a spreadsheet and visiting them all at once.",
+    "file": "launch-clipboard-buffer-url-list.md"
+  },
+  {
+    "name": "List processes at port",
+    "description": "List processes at a port to see if there are running processes.",
+    "file": "list_processes_at_port.md"
+  },
+  {
+    "name": "Make a directory and change into it",
+    "description": "Runs `mkdir` followed by `cd`. Generated by Warp AI.",
+    "file": "make_a_dir_and_change_into.md"
+  },
+  {
+    "name": "Read file contents as input to another command",
+    "description": "Reads the contents within file and passes it as input to the command.",
+    "file": "read_file_contents_as_input_to_another_command.md"
+  },
+  {
+    "name": "Redirect output of command to a file",
+    "description": "Writes the output of a command to a file, overwriting anything that was already in the file.",
+    "file": "redirect_output_of_command_to_a_file.md"
+  },
+  {
+    "name": "Redirect output of command to a file by appending",
+    "description": "Redirects the output of the command to a file. Creates the file if not present, otherwise appends to it.",
+    "file": "redirect_output_of_command_to_a_file_by_appending.md"
+  },
+  {
+    "name": "Redirect stderr",
+    "description": "Executes the command, redirecting stderr to a file. Specify `/dev/null` to ignore stderr completely.",
+    "file": "redirect_stderr.md"
+  },
+  {
+    "name": "Redirect stdout",
+    "description": "Executes the command, redirecting stdout to a file. Specify `/dev/null` to ignore stdout completely.",
+    "file": "redirect_stdout.md"
+  },
+  {
+    "name": "Search for specified file types and run a certain command for each file",
+    "description": "Use the Find command to search for specified file types and run a certain command for each file",
+    "file": "search_files_and_process.md"
+  },
+  {
+    "name": "Shell for-loop",
+    "description": "A for loop that iterates through a sequence. A common example of this is to iterate through words in in a string, for example:\n\nfor i in $( ls ); do\n     echo item: $i\ndone",
+    "file": "shell_for_loop.md"
+  },
+  {
+    "name": "Shell while-loop",
+    "description": "A while loop, similar to one in other programming languages.",
+    "file": "shell_while_loop.md"
+  },
+  {
+    "name": "Create a copy of a PostgreSQL database",
+    "description": "Creates a new Postgres database, using an existing database as a template for which to build the database.",
+    "file": "create_a_copy_of_a_postgre_sql_database.md"
+  },
+  {
+    "name": "Create an empty sqlite db",
+    "description": "Uses the VACUUM command to create a valid empty SQLite database file.",
+    "file": "create_an_empty_sqlite_db.md"
+  },
+  {
+    "name": "Dump a MySQL database into a file",
+    "description": "Dump a MySQL database, including its data, into a file.",
+    "file": "dump_a_my_sql_database_into_a_file.md"
+  },
+  {
+    "name": "Dump sqlite schema into a .sql file",
+    "description": "Dumbs the entire schema of a given SQLite database into a new file.",
+    "file": "dump_sqlite_schema_into_a_sql_file.md"
+  },
+  {
+    "name": "Execute a .sql file against a PostgreSQL database",
+    "description": "Runs .sql file against a Postgres database, while also handling authentication.",
+    "file": "execute_a_sql_file_against_a_postgre_sql_database.md"
+  },
+  {
+    "name": "Export MySQL database schema without exporting its data",
+    "description": "Exports a MySQL database schema to a file without exporting its underlying data.",
+    "file": "export_my_sql_dataabase_schema_without_exporting_its_data.md"
+  },
+  {
+    "name": "Export SQLite query to a CSV file",
+    "description": "Executes a sql query against the given SQLite database and outputs the the results to a CSV file.",
+    "file": "export_sq_lite_query_to_a_csv_file.md"
+  },
+  {
+    "name": "Import a SQL file into a MySQL server",
+    "description": "Imports an exported SQL dump into a MySQL server",
+    "file": "import_a_sql_file_into_a_my_sql_server.md"
+  },
+  {
+    "name": "Import a MySQL dump with progress bar into a MySQL server",
+    "description": "Import a mysqldump file into a MySQL server with a progress bar indicating time remaining",
+    "file": "import_my_sql_dump_with_progress_bar.md"
+  },
+  {
+    "name": "Import SQL dump into a PostgreSQL database",
+    "description": "Imports a SQL dump into an existing database. Note the database must already be created for this to work.",
+    "file": "import_sql_dump_into_a_postgre_sql_database.md"
+  },
+  {
+    "name": "Migrate from MySQL Database to PostgresSQL Database",
+    "description": "Loads data from the MySQL database, transforms it to PostgreSQL compatible format and uploads it to the PostgreSQL database. Note -  it requires pgloader to be installed and both PostgreSQL and MySQL hosts are accessible from the machine running this script.",
+    "file": "migrate-from-mysql-database-to-postgresql-database.md"
+  },
+  {
+    "name": "Restore a dump file from a mysqldump",
+    "description": "",
+    "file": "restore_a_dump_file_from_a_mysqldump.md"
+  },
+  {
+    "name": "Store result of a PostgreSQL query as a CSV file",
+    "description": "Executes a query against a Postgres database and writes the output to a new file",
+    "file": "store_result_of_a_postgre_sql_query_as_a_csv_file.md"
+  },
+  {
+    "name": "Copy SSH key for GitHub",
+    "description": "Copies the SSH key for GitHub to the clipboard. This is useful for adding the SSH key to GitHub.",
+    "file": "copy_ssh_key_for_github.md"
+  },
+  {
+    "name": "Generate new SSH key for GitHub",
+    "description": "Generates a new SSH key for GitHub. The email address is optional. If you don't specify an email address, you'll be prompted to enter one.",
+    "file": "generate_new_ssh_key_for_github.md"
+  },
+  {
+    "name": "Change an SSH key comment",
+    "description": "Change the comment stored in the public key of a pub/priv key pair.",
+    "file": "change_ssh_key_comment.md"
+  },
+  {
+    "name": "Generate a self-signed SSL certificate",
+    "description": "Generates a self-signed SSL certificate using OpenSSL. Beware, self-signed certificates are typically not validated with any third party. It's recommended to use a certificate signed by a certificate authority.",
+    "file": "generate_a_self_signed_ssl_certificate.md"
+  },
+  {
+    "name": "Show SSL certificate expiration date from an encoded certificate",
+    "description": "Prints the SSL cert expiration date from a PEM encoded certificate. The output is of the form `notAfter=Nov  3 22:23:50 2014 GMT`.",
+    "file": "show_ssl_certificate_expiration_date_from_an_encoded_certificate.md"
+  },
+  {
+    "name": "Clear Yarn cache",
+    "description": "Clears the global yarn cache directory.",
+    "file": "clear_yarn_cache.md"
+  },
+  {
+    "name": "Force Yarn to reinstall package",
+    "description": "Force updates a package to the latest version based on the version based on the version range specified in the package.json file.",
+    "file": "force_yarn_to_reinstall_package.md"
+  },
+  {
+    "name": "Install package in Yarn from a Git repository",
+    "description": "Add a git repository as a dependency in Yarn.",
+    "file": "install_package_in_yarn_from_a_git_repository.md"
+  },
+  {
+    "name": "Run a Yarn command in a different directory",
+    "description": "Specifies the working directory for yarn so that a command can be run in a directory other than the current directory.",
+    "file": "run_a_yarn_command_in_a_different_directory.md"
+  },
+  {
+    "name": "Update each Yarn dependency to the latest version",
+    "description": "Upgrade each yarn dependency by using the Yarn upgrade tool in interactive mode.",
+    "file": "update_each_yarn_dependency_to_the_latest_version.md"
+  },
+  {
+    "name": "Upgrade Yarn to latest version",
+    "description": "Upgrades the current yarn version to the latest version using the npm package manager.",
+    "file": "upgrade_yarn_to_latest_version.md"
+  },
+  {
+    "name": "Yarn install with reproducible dependencies",
+    "description": "Install yarn dependencies withuot a lockfile. This is useful if you need reproducible dependencies, which is usually the case with continuous integration systems.",
+    "file": "yarn_install_with_reproducible_dependencies.md"
+  },
+  {
+    "name": "Compression all subdirectories and output each directory as a zip file.",
+    "description": "Use zip to compress all subdirectories under a folder and output each directory as a zip file.",
+    "file": "compress_subdirectories_under_folder.md"
+  }
+]

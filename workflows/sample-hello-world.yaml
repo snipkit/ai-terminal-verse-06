@@ -1,0 +1,9 @@
+name: Hello World
+category: demo
+parameters: []
+description: |
+  A simple workflow that prints Hello World.
+steps:
+  - name: Print Hello
+    description: Echo Hello World
+    command: echo 'Hello World'

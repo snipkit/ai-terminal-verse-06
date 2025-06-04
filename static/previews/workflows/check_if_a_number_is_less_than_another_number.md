@@ -1,0 +1,4 @@
+# Check if a number is less than another number
+
+**Description:** Returns an exit code of 0 if integer_a is less than or equal to integer_b.
+

@@ -1,0 +1,16 @@
+name: Build Project
+category: build
+parameters:
+  - name: target
+    description: Build target (e.g. app, lib)
+  - name: release
+    description: Release mode (true/false)
+description: |
+  Build the project for the specified target and mode.
+steps:
+  - name: Install dependencies
+    description: Run npm install
+    command: npm install
+  - name: Build
+    description: Run the build script
+    command: npm run build -- --target=${target} --release=${release}

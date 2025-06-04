@@ -1,0 +1,11 @@
+name: Deploy Project
+category: deploy
+parameters:
+  - name: env
+    description: Deployment environment (staging, production)
+description: |
+  Deploy the project to the specified environment.
+steps:
+  - name: Deploy
+    description: Run the deploy script
+    command: npm run deploy -- --env=${env}

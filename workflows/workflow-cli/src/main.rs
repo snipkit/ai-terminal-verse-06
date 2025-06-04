@@ -1,4 +1,3 @@
-
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 use std::path::PathBuf;
@@ -54,10 +53,29 @@ async fn main() -> Result<()> {
             }
         }
         Commands::Run { name, args } => {
-            println!("Running workflow: {}", name);
+            use serde_json::json;
+            use std::io::{self, Read};
+
+            // Parse args into a map
+            let mut params = serde_json::Map::new();
             for arg in args {
-                println!("  Argument: {}", arg);
+                if let Some((k, v)) = arg.split_once('=') {
+                    params.insert(k.to_string(), json!(v));
+                }
             }
+
+            // Read workflow YAML from stdin
+            let mut buffer = String::new();
+            io::stdin().read_to_string(&mut buffer).ok();
+
+            // Simulate parsing YAML and running steps
+            let result = json!({
+                "workflow": name,
+                "params": params,
+                "status": "success",
+                "output": format!("Simulated execution of workflow '{}' with params: {{:?}}", name, params),
+            });
+            println!("{}", serde_json::to_string_pretty(&result).unwrap());
         }
         Commands::Create { output } => {
             println!("Creating workflow at: {:?}", output);

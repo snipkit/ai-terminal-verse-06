@@ -1,7 +1,9 @@
-
 #!/bin/bash
 
 set -e
+
+# Change to workspace root
+cd "$(dirname "$0")/../.."
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -54,39 +56,52 @@ build_target() {
     local target=$1
     print_info "Building for target: $target"
     
+    # Build the project for the target from the project directory
     cd $PROJECT_DIR
     
     if cargo build --release --target $target --locked; then
+        # Build successful, change back to workspace root
+        cd ../..
+        
         # Determine binary extension
         local binary_name="workflow"
         if [[ $target == *"windows"* ]]; then
             binary_name="workflow.exe"
         fi
         
+        # Define source and destination paths relative to workspace root
+        local src_path="$PROJECT_DIR/target/$target/release/$binary_name"
+        local target_dir="$DIST_DIR/$target"
+        local dest_path="$target_dir/$binary_name"
+        
         # Create target-specific directory
-        local target_dir="../../$DIST_DIR/$target"
-        mkdir -p $target_dir
+        mkdir -p "$target_dir"
         
         # Copy binary
-        cp "target/$target/release/$binary_name" "$target_dir/"
+        cp "$src_path" "$dest_path"
         
         # Create archive
-        cd "../../$DIST_DIR"
+        cd "$DIST_DIR"
         if [[ $target == *"windows"* ]]; then
             zip -r "workflow-$target.zip" "$target/"
         else
             tar -czf "workflow-$target.tar.gz" "$target/"
         fi
         
-        cd "../$PROJECT_DIR"
+        # Change back to workspace root from DIST_DIR
+        cd ../..
+        
         print_info "✓ Successfully built for $target"
     else
         print_error "✗ Failed to build for $target"
+        # Ensure we are back at the workspace root on failure
         cd ../..
         return 1
     fi
     
-    cd ../..
+    # Ensure we are at the workspace root after the build and copy
+    # This cd is redundant if build was successful, but defensive on failure path
+    cd "$(dirname "$0")/../.."
 }
 
 # Build for all targets
