@@ -1,5 +1,5 @@
 
-.PHONY: build clean install test cross-build help
+.PHONY: build clean install test cross-build help optimize
 
 # Default target
 all: build
@@ -13,6 +13,21 @@ build:
 build-fast:
 	@echo "Building fast release binary..."
 	@./scripts/build.sh fast
+
+# Maximum optimization build
+optimize:
+	@echo "Building with maximum optimizations..."
+	@./scripts/optimize-build.sh --clean --strip --upx
+
+# Size-optimized build
+build-size:
+	@echo "Building size-optimized binary..."
+	@./scripts/optimize-build.sh --profile release-size --clean --strip
+
+# Speed-optimized build
+build-speed:
+	@echo "Building speed-optimized binary..."
+	@./scripts/optimize-build.sh --profile release-speed --clean
 
 # Clean build artifacts
 clean:
@@ -66,11 +81,19 @@ install:
 	@echo "Installing binary..."
 	@cd workflow-cli && cargo install --path .
 
+# Benchmark build
+benchmark:
+	@echo "Running benchmark build..."
+	@time ./scripts/optimize-build.sh --clean --verbose
+
 # Show help
 help:
 	@echo "Available targets:"
 	@echo "  build           - Build optimized release binary"
 	@echo "  build-fast      - Build fast release binary"
+	@echo "  optimize        - Build with maximum optimizations (strip + UPX)"
+	@echo "  build-size      - Build size-optimized binary"
+	@echo "  build-speed     - Build speed-optimized binary"
 	@echo "  clean           - Clean build artifacts"
 	@echo "  install-targets - Install cross-compilation targets"
 	@echo "  cross-build     - Build for all platforms"
@@ -79,4 +102,5 @@ help:
 	@echo "  check           - Run code quality checks"
 	@echo "  fmt             - Format code"
 	@echo "  install         - Install binary locally"
+	@echo "  benchmark       - Run benchmark build"
 	@echo "  help            - Show this help"

@@ -1,0 +1,55 @@
+
+# Rust Optimization Configuration
+# This file contains advanced optimization settings for maximum performance
+
+[profile.release-max]
+inherits = "release"
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
+overflow-checks = false
+debug-assertions = false
+incremental = false
+rpath = false
+
+[profile.release-size]
+inherits = "release"
+opt-level = "s"
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
+overflow-checks = false
+debug-assertions = false
+
+[profile.release-speed]
+inherits = "release"
+opt-level = 3
+lto = "thin"
+codegen-units = 16
+panic = "abort"
+strip = "symbols"
+overflow-checks = false
+debug-assertions = false
+
+# Target-specific optimizations
+[target.x86_64-unknown-linux-gnu]
+rustflags = [
+    "-C", "target-cpu=native",
+    "-C", "link-arg=-Wl,--gc-sections",
+    "-C", "link-arg=-Wl,--strip-all"
+]
+
+[target.x86_64-pc-windows-gnu]
+rustflags = [
+    "-C", "target-cpu=native",
+    "-C", "link-arg=-Wl,--gc-sections"
+]
+
+[target.x86_64-apple-darwin]
+rustflags = [
+    "-C", "target-cpu=native",
+    "-C", "link-arg=-Wl,-dead_strip"
+]
