@@ -1,5 +1,4 @@
-
-.PHONY: build clean install test cross-build help optimize
+.PHONY: build clean install test cross-build help optimize validate-export
 
 # Default target
 all: build
@@ -29,10 +28,17 @@ build-speed:
 	@echo "Building speed-optimized binary..."
 	@./scripts/optimize-build.sh --profile release-speed --clean
 
+# Validate and export workflows
+validate-export:
+	@echo "Validating and exporting all workflows..."
+	@chmod +x ./scripts/validate-export.sh
+	@./scripts/validate-export.sh
+
 # Clean build artifacts
 clean:
 	@echo "Cleaning build artifacts..."
 	@./scripts/build.sh clean
+	@rm -rf ./dist
 
 # Install cross-compilation targets
 install-targets:
@@ -94,6 +100,7 @@ help:
 	@echo "  optimize        - Build with maximum optimizations (strip + UPX)"
 	@echo "  build-size      - Build size-optimized binary"
 	@echo "  build-speed     - Build speed-optimized binary"
+	@echo "  validate-export - Validate and export all workflows to ./dist/"
 	@echo "  clean           - Clean build artifacts"
 	@echo "  install-targets - Install cross-compilation targets"
 	@echo "  cross-build     - Build for all platforms"

@@ -1,0 +1,19 @@
+
+name: Configure Load Balancer
+command: "nginx -t && systemctl reload nginx && curl -f {{health_check_url}}"
+description: "Configure and reload Nginx load balancer with health check validation"
+tags:
+  - nginx
+  - load-balancer
+  - configuration
+  - health-check
+arguments:
+  - name: health_check_url
+    description: URL to perform health check after reload
+    default_value: "http://localhost/health"
+    required: true
+author: Infrastructure Team
+source_url: "https://nginx.org/en/docs/http/load_balancing.html"
+shells:
+  - bash
+  - zsh

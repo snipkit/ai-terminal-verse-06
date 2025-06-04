@@ -1,0 +1,27 @@
+
+name: Deploy Nginx Load Balancer
+command: "kubectl apply -f {{config_file}} && kubectl rollout status deployment/{{deployment_name}} -n {{namespace}}"
+description: "Deploy and configure Nginx as a load balancer in Kubernetes cluster"
+tags:
+  - nginx
+  - kubernetes
+  - deployment
+  - load-balancer
+arguments:
+  - name: config_file
+    description: Path to the Nginx configuration file
+    default_value: "nginx-config.yaml"
+    required: true
+  - name: deployment_name
+    description: Name of the Nginx deployment
+    default_value: "nginx-lb"
+    required: true
+  - name: namespace
+    description: Kubernetes namespace for deployment
+    default_value: "default"
+    required: false
+author: DevOps Team
+source_url: "https://kubernetes.io/docs/concepts/services-networking/ingress/"
+shells:
+  - bash
+  - zsh
